@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{37BED86D-6309-4649-BEAE-8868AF5CB2A0}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>BoshokuDemo1</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Login\LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Tab\AnnounPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Tab\UserDataPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Popup\LoadingPopPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Tab\UserSettingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Tab\SurveyPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Tab\SurveyQuestionList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\DrawerMenu\DrawerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Login\PasswordPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\DrawerMenu\TBTWebPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Tab\ActivitysPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Popup\ErrorPopPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Tab\ReadPage.xaml">
+     <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Login\IntroPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Tab\NotificationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\DrawerMenu\EventPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Login\NewUserPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\DrawerMenu\EventInteractionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Tab\TestPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Login\ReadUserLicance.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\DrawerMenu\EventQuestionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Login\PasswordForgotPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Popup\AnimationPopupPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Login\AppControlPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Components\ImageTextView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Login\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Announcements.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helper\SaveUserData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Tab\AnnounPage.xaml.cs">
+      <DependentUpon>AnnounPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\UserRequestMVVM.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Tab\UserDataPage.xaml.cs">
+      <DependentUpon>UserDataPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Popup\LoadingPopPage.xaml.cs">
+      <DependentUpon>LoadingPopPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Tab\TabControl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Tab\UserSettingPage.xaml.cs">
+      <DependentUpon>UserSettingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Tab\SurveyPage.xaml.cs">
+      <DependentUpon>SurveyPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\SurveyMVVM.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Tab\SurveyQuestionList.xaml.cs">
+      <DependentUpon>SurveyQuestionList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Model\LocalCategory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\DrawerMenu\DrawerPage.xaml.cs">
+      <DependentUpon>DrawerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\DrawerMenu\MasterControlMenu.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Search.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Login\NoneEntry.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Login\PasswordPage.xaml.cs">
+      <DependentUpon>PasswordPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\DrawerMenu\TBTWebPage.xaml.cs">
+      <DependentUpon>TBTWebPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Service\BoshokuService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\NewsFeedViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helper\Extensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ActivitysViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Tab\ActivitysPage.xaml.cs">
+      <DependentUpon>ActivitysPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Activities.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Surveys.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\LoginViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Users.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\FeedBacks.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helper\OrderChild.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\SimpleNews.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Components\CustomWebView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\PasswordRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Popup\ErrorPopPage.xaml.cs">
+      <DependentUpon>ErrorPopPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\SettingsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Tab\ReadPage.xaml.cs">
+      <DependentUpon>ReadPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ReadViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Login\IntroPage.xaml.cs">
+      <DependentUpon>IntroPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\IntroViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\IToolbarItemBadge.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Tab\NotificationPage.xaml.cs">
+      <DependentUpon>NotificationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\NotifyViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\IRemoveIcon.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helper\ISqliteConnection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service\SqliteManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helper\BaseEnum.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\SplashMVVM.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\DrawerMenu\EventPage.xaml.cs">
+      <DependentUpon>EventPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\EventViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Login\NewUserPage.xaml.cs">
+      <DependentUpon>NewUserPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\NewUserMVVM.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\UserSecurity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Competitions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\DrawerMenu\EventInteractionPage.xaml.cs">
+      <DependentUpon>EventInteractionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\InteractionViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\InteractionResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\BaseViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\TestViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Tab\TestPage.xaml.cs">
+      <DependentUpon>TestPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\PasswordViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Login\ReadUserLicance.xaml.cs">
+      <DependentUpon>ReadUserLicance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\UserLicanceViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\DrawerMenu\EventQuestionPage.xaml.cs">
+      <DependentUpon>EventQuestionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\EventQuestionViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Components\CustomSearchBar.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Login\PasswordForgotPage.xaml.cs">
+      <DependentUpon>PasswordForgotPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ForgotViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Forgot.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Toast.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Popup\AnimationPopupPage.xaml.cs">
+      <DependentUpon>AnimationPopupPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Login\AppControlPage.xaml.cs">
+      <DependentUpon>AppControlPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\AppControlViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\MobileClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Components\ImageTextView.xaml.cs">
+      <DependentUpon>ImageTextView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Views\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Model\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\Login\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Helper\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewModel\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\Tab\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\Popup\" />
+    <Folder Include="$(MSBuildThisFileDirectory)$(MSBuildThisFileDi&#xD;&#xA;    rectory)Views\DrawerMenu\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Service\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\Components\" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:BoshokuDemo1.Views.Login" BackgroundColor="{StaticResource PageBackgroundColor}" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BoshokuDemo1.Views.DrawerMenu.EventInteractionPage" xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" ios:Page.UseSafeArea="true">
+    <ContentPage.Content>
+              <Grid BackgroundColor="{StaticResource MainBackgroundColor}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*" />
+                <RowDefinition Height="4*" />
+            </Grid.RowDefinitions>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Image Source="{Binding uploadPhoto.Source}" Aspect="AspectFit" Grid.Row="1" Margin="5">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding takePhoto}" NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+            </Grid>
+            <ScrollView Grid.Row="1">
+                <StackLayout>
+                    <Label Text="{Binding competition.compDesc,StringFormat='- {0}'}" TextColor="{StaticResource labelColor}" VerticalOptions="Center" />
+                    <local:NoneEntry HorizontalOptions="FillAndExpand" Placeholder="Cevabınızı giriniz..." TextColor="{StaticResource inputColor}" Text="{Binding response.text}" BackgroundColor="White"/>
+                    <Button BackgroundColor="White" BorderRadius="5" Text="Gönder" FontAttributes="Bold" TextColor="{StaticResource inputColor}" Command="{Binding sendRequest}" Margin="5" VerticalOptions="End" />
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

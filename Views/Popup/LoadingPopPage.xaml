@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" x:Class="BoshokuDemo1.Views.Popup.LoadingPopPage">
+    <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" x:Name="_loadLayout">
+        <ActivityIndicator IsRunning="true" Color="White" x:Name="_loadIndicator" VerticalOptions="Center" />
+        <Label Text="Yükleniyor..." TextColor="White" x:Name="_loadLabel" VerticalOptions="Center" />
+    </StackLayout>
+</pages:PopupPage>

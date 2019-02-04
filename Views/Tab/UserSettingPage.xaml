@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:BoshokuDemo1.Views.Components" x:Class="BoshokuDemo1.Views.Tab.UserSettingPage" BackgroundColor="{StaticResource PageBackgroundColor}" xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" ios:Page.UseSafeArea="true">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Grid RowSpacing="10" BackgroundColor="{StaticResource MainBackgroundColor}" BindingContext="{Binding .}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid BackgroundColor="White" Margin="0,10,0,0" ColumnSpacing="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <local:ImageTextView Text="{Binding userNameShort}" HeightRequest="100"  HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"/>
+                    <Label Text="{Binding userInfo}" VerticalOptions="Center" FontFamily="{StaticResource NormalFont}" HorizontalOptions="Start" TextColor="{StaticResource labelColor}" Grid.Column="1" />
+                </Grid>
+                <TableView Intent="Menu" Grid.Row="1">
+                    <TableSection Title="Güvenlik ">
+                        <ViewCell>
+                            <Grid BackgroundColor="White">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Source="ic_menu_lock" Margin="5" />
+                                <Label Grid.Column="1" Text="Şifre işlemleri" FontFamily="{StaticResource MediumFont}" TextColor="{StaticResource labelColor}" VerticalOptions="Center" FontSize="Medium" />
+                                <Image Grid.Column="2" Source="right" VerticalOptions="Center" Margin="10,0,10,0" HeightRequest="20" />
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding passwordNavigation}" NumberOfTapsRequired="1" />
+                                </Grid.GestureRecognizers>
+                            </Grid>
+                        </ViewCell>
+                    </TableSection>
+                    <TableSection>
+                    </TableSection>
+                    <TableSection Title="Uygulama">
+                        <ViewCell>
+                            <Grid BackgroundColor="White">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Source="ic_info_red" Margin="5" />
+                                <Label Grid.Column="1" Text="Versiyon" FontFamily="{StaticResource MediumFont}" TextColor="{StaticResource labelColor}" VerticalOptions="Center" FontSize="Medium" />
+                                <Label Grid.Column="2" Text="{Binding appVersion}" FontSize="Medium" FontFamily="{StaticResource MediumFont}" Margin="10,0,10,0" VerticalOptions="Center" />
+                            </Grid>
+                        </ViewCell>
+                    </TableSection>
+                    <TableSection />
+                    <TableSection />
+                    <TableSection />
+                </TableView>
+                <Label Text="Çıkış" TextColor="Red" HeightRequest="40" BackgroundColor="White" Grid.Row="2" Margin="0,0,0,10" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" FontFamily="{StaticResource MediumFont}" VerticalTextAlignment="Center"
+                    FontSize="Default">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding exitApp}" NumberOfTapsRequired="1" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </Grid>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

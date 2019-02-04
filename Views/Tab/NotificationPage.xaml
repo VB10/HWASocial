@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BoshokuDemo1.Views.Tab.NotificationPage" xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" BackgroundColor="{StaticResource PageBackgroundColor}" ios:Page.UseSafeArea="true">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Temizle" Command="{Binding cleanList}" Order="Primary" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <ListView ItemsSource="{Binding newsList}" HasUnevenRows="true" BackgroundColor="{StaticResource MainBackgroundColor}" ItemSelected="Handle_ItemSelected" SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <!--                    <ImageCell  ImageSource="{Binding Object.image}" Text="{Binding Object.title}" Detail="{Binding Object.category}" />
+-->
+                        <ViewCell>
+                            <Grid RowSpacing="0" ColumnSpacing="5" Margin="0,10,0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="60" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Image Source="{Binding image}" Aspect="AspectFit" />
+                                <StackLayout HorizontalOptions="StartAndExpand" Grid.Column="1">
+                                    <Label Text="{Binding title}" FontSize="Medium" />
+                                    <Label Text="{Binding category}" FontSize="Small" TextColor="Gray" />
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.Footer>
+                </ListView.Footer>
+            </ListView>
+            <StackLayout Orientation="Horizontal" HeightRequest="40" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" IsVisible="{Binding isEmptyList}">
+                <Image Source="flag" Aspect="AspectFill" Opacity="0.8" HeightRequest="{Binding FontSize}" BindingContext="{x:Reference labelEmpty}" />
+                <Label VerticalOptions="Center" Text="Yeni bildirim bulunmuyor" x:Name="labelEmpty" />
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

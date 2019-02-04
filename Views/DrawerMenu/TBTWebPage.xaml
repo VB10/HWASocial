@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" BackgroundColor="{StaticResource PageBackgroundColor}" xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" ios:Page.UseSafeArea="true" xmlns:components="clr-namespace:BoshokuDemo1.Views.Components" x:Class="BoshokuDemo1.Views.DrawerMenu.TBTWebPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Geri dön" Order="Primary" Clicked="Handle_BackClicked" Icon="ic_home_w" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource MainBackgroundColor}" RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <!--            <Button Grid.Row="1" Text="Geri Dön" Clicked="Handle_BackClicked" BackgroundColor="{StaticResource PageBackgroundColor}" BorderWidth="0" TextColor="White" FontSize="Medium" />
+-->
+            <components:CustomWebView x:Name="_webTBT" Grid.Row="0" />
+            <!--            <Button Image="ic_home_w" Grid.Row="1" BackgroundColor="{StaticResource PageBackgroundColor}" Clicked="Handle_BackClicked" x:Name="buttonHome" FontSize="Medium" TextColor="White" />
+-->
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BoshokuDemo1.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="PageBackgroundColor">#E9290F</Color>
+            <Color x:Key="MainBackgroundColor">#eeeeee</Color>
+            <Color x:Key="NavBarColor">#ff5722</Color>
+            <Color x:Key="labelColor">#303841</Color>
+            <Color x:Key="inputColor">#ff5722</Color>
+            <Color x:Key="hintColor">#2d4059</Color>
+            <OnPlatform x:TypeArguments="x:String" x:Key="BoldFont">
+                <On Platform="Android" Value="Montserrat-Bold.ttf#Montserrat" />
+                <On Platform="iOS" Value="Montserrat-Bold" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="NormalFont">
+                <On Platform="Android" Value="Montserrat-Regular.ttf#Montserrat" />
+                <On Platform="iOS" Value="Montserrat-Regular" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="LightFont">
+                <On Platform="Android" Value="Montserrat-Light.ttf#Montserrat" />
+                <On Platform="iOS" Value="Montserrat-Light" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="MediumFont">
+                <On Platform="Android" Value="Montserrat-Medium.ttf#Montserrat" />
+                <On Platform="iOS" Value="Montserrat-Medium" />
+            </OnPlatform>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

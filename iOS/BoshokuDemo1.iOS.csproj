@@ -1,0 +1,1194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Xamarin.Forms.3.4.0.1009999\build\Xamarin.Forms.props" Condition="Exists('..\packages\Xamarin.Forms.3.4.0.1009999\build\Xamarin.Forms.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectGuid>{7B79C3AC-C296-450C-8CCA-0CAC6B773388}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>BoshokuDemo1.iOS</RootNamespace>
+    <AssemblyName>BoshokuDemo1.iOS</AssemblyName>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer: Veli Bacik (FR5D9HB953)</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <IOSDebuggerPort>49047</IOSDebuggerPort>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodesignProvision>VS: vb.toyota.tbtapp Development</CodesignProvision>
+    <MtouchExtraArgs>--registrar:static</MtouchExtraArgs>
+    <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
+    <DeviceSpecificBuild>false</DeviceSpecificBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Distribution: Veli Bacik (XE7NL975AC)</CodesignKey>
+    <MtouchFloat32>true</MtouchFloat32>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+    <BuildIpa>true</BuildIpa>
+    <IpaPackageName>vb.hardwareandro.TBTapp</IpaPackageName>
+<MtouchFastDev>false</MtouchFastDev>
+<MtouchEnableSGenConc>true</MtouchEnableSGenConc>
+<IpaIncludeArtwork>true</IpaIncludeArtwork>
+<CodesignProvision>vbTBT</CodesignProvision>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer: Veli Bacik (FR5D9HB953)</CodesignKey>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodesignProvision>VS: vb.toyota.tbtapp Development</CodesignProvision>
+    <MtouchFloat32>true</MtouchFloat32>
+    <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer: Veli Bacik (FR5D9HB953)</CodesignKey>
+    <MtouchFastDev>false</MtouchFastDev>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <IOSDebuggerPort>29487</IOSDebuggerPort>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+    <BuildIpa>false</BuildIpa>
+    <IpaPackageName></IpaPackageName>
+<IpaIncludeArtwork>false</IpaIncludeArtwork>
+<CodesignProvision>iOS Team Provisioning Profile: vb.toyota.tbtapp</CodesignProvision>
+<MtouchDebug>true</MtouchDebug>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="crypto">
+      <HintPath>..\packages\Firebase.Xamarin.0.3.6\lib\crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Xamarin">
+      <HintPath>..\packages\Firebase.Xamarin.0.3.6\lib\Firebase.Xamarin.dll</HintPath>
+    </Reference>
+    <Reference Include="JWT">
+      <HintPath>..\packages\Firebase.Xamarin.0.3.6\lib\JWT.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Core">
+      <HintPath>..\packages\Firebase.Xamarin.0.3.6\lib\System.Reactive.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces">
+      <HintPath>..\packages\Firebase.Xamarin.0.3.6\lib\System.Reactive.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Linq">
+      <HintPath>..\packages\Firebase.Xamarin.0.3.6\lib\System.Reactive.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="Xamarin.Forms.CarouselView">
+      <HintPath>..\packages\Xamarin.Forms.CarouselView.2.3.0-pre2\lib\Xamarin.iOS10\Xamarin.Forms.CarouselView.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="WebP.Touch">
+      <HintPath>..\packages\WebP.Touch.1.0.8\lib\Xamarin.iOS10\WebP.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="ExifLib">
+      <HintPath>..\packages\ExifLib.PCL.1.0.2-pre01\lib\netstandard1.0\ExifLib.dll</HintPath>
+    </Reference>
+    <Reference Include="XLabs.Core">
+      <HintPath>..\packages\XLabs.Core.2.3.0-pre05\lib\portable-net45+win8+wpa81+wp8+monoandroid+monotouch+xamarinios10+xamarinmac\XLabs.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="XLabs.IOC">
+      <HintPath>..\packages\XLabs.IoC.2.3.0-pre05\lib\portable-net45+win8+wpa81+wp8+monoandroid+monotouch+xamarinios10+xamarinmac\XLabs.IOC.dll</HintPath>
+    </Reference>
+    <Reference Include="XLabs.Serialization">
+      <HintPath>..\packages\XLabs.Serialization.2.3.0-pre05\lib\portable-net45+netcore45+wpa81+wp8+monoandroid+monotouch+xamarinios10+xamarinmac\XLabs.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="XLabs.Platform">
+      <HintPath>..\packages\XLabs.Platform.2.3.0-pre05\lib\xamarinios10\XLabs.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="XLabs.Platform.iOS">
+      <HintPath>..\packages\XLabs.Platform.2.3.0-pre05\lib\xamarinios10\XLabs.Platform.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="XLabs.Forms">
+      <HintPath>..\packages\XLabs.Forms.2.3.0-pre05\lib\xamarinios10\XLabs.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="XLabs.Forms.iOS">
+      <HintPath>..\packages\XLabs.Forms.2.3.0-pre05\lib\xamarinios10\XLabs.Forms.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="CarouselView.FormsPlugin.Abstractions">
+      <HintPath>..\packages\CarouselView.FormsPlugin.5.2.0\lib\Xamarin.iOS10\CarouselView.FormsPlugin.Abstractions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="CarouselView.FormsPlugin.iOS">
+      <HintPath>..\packages\CarouselView.FormsPlugin.5.2.0\lib\Xamarin.iOS10\CarouselView.FormsPlugin.iOS.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="CarouselView.FormsPlugin.Abstractions">
+      <HintPath>..\packages\CarouselView.FormsPlugin.5.0.0\lib\Xamarin.iOS10\CarouselView.FormsPlugin.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="CarouselView.FormsPlugin.iOS">
+      <HintPath>..\packages\CarouselView.FormsPlugin.5.0.0\lib\Xamarin.iOS10\CarouselView.FormsPlugin.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="HockeySDK">
+      <HintPath>..\packages\HockeySDK.Xamarin.5.1.2\lib\Xamarin.iOS10\HockeySDK.dll</HintPath>
+    </Reference>
+    <Reference Include="HockeySDK.iOSBindings">
+      <HintPath>..\packages\HockeySDK.Xamarin.5.1.2\lib\Xamarin.iOS10\HockeySDK.iOSBindings.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Notifications">
+      <HintPath>..\packages\Plugin.Notifications.5.0.0-beta3\lib\xamarinios10\Plugin.Notifications.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Storage">
+      <HintPath>..\packages\FirebaseStorage.net.1.0.3\lib\netstandard1.1\Firebase.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Permissions">
+      <HintPath>..\packages\Plugin.Permissions.3.0.0.12\lib\xamarinios10\Plugin.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.PlatformServices">
+      <HintPath>..\packages\Rx-PlatformServices.2.3\lib\portable-windows8+net45+wp8\System.Reactive.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DotNet.PlatformAbstractions">
+      <HintPath>..\packages\Microsoft.DotNet.PlatformAbstractions.2.1.0\lib\netstandard1.3\Microsoft.DotNet.PlatformAbstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Settings">
+      <HintPath>..\packages\Xam.Plugins.Settings.4.0.0.10-beta\lib\xamarinios10\Plugin.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Naxam.BottomTabbedPage.Forms">
+      <HintPath>..\packages\Naxam.BottomTabbedPage.0.2.0.3\lib\netstandard2.0\Naxam.BottomTabbedPage.Forms.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ImageCircle.Forms.Plugin">
+      <HintPath>..\packages\Xam.Plugins.Forms.ImageCircle.3.0.0.5\lib\xamarinios10\ImageCircle.Forms.Plugin.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.core">
+      <HintPath>..\packages\SQLitePCLRaw.core.1.1.12\lib\Xamarin.iOS10\SQLitePCLRaw.core.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.provider.sqlite3">
+      <HintPath>..\packages\SQLitePCLRaw.provider.sqlite3.ios_unified.1.1.12\lib\Xamarin.iOS10\SQLitePCLRaw.provider.sqlite3.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_green">
+      <HintPath>..\packages\SQLitePCLRaw.bundle_green.1.1.12\lib\Xamarin.iOS10\SQLitePCLRaw.batteries_green.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_v2">
+      <HintPath>..\packages\SQLitePCLRaw.bundle_green.1.1.12\lib\Xamarin.iOS10\SQLitePCLRaw.batteries_v2.dll</HintPath>
+    </Reference>
+    <Reference Include="SkiaSharp">
+      <HintPath>..\packages\SkiaSharp.1.68.0\lib\Xamarin.iOS\SkiaSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SkiaSharp.Views.iOS">
+      <HintPath>..\packages\SkiaSharp.Views.1.68.0\lib\Xamarin.iOS\SkiaSharp.Views.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="SkiaSharp.Views.Forms">
+      <HintPath>..\packages\SkiaSharp.Views.Forms.1.68.0\lib\Xamarin.iOS\SkiaSharp.Views.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLite-net">
+      <HintPath>..\packages\sqlite-net-pcl.1.5.231\lib\netstandard1.1\SQLite-net.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Media">
+      <HintPath>..\packages\Xam.Plugin.Media.4.0.1.5\lib\xamarinios10\Plugin.Media.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.LocalNotifications.Abstractions">
+      <HintPath>..\packages\Xam.Plugins.Notifier.3.0.1\lib\Xamarin.iOS10\Plugin.LocalNotifications.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.LocalNotifications">
+      <HintPath>..\packages\Xam.Plugins.Notifier.3.0.1\lib\Xamarin.iOS10\Plugin.LocalNotifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Lottie.iOS">
+      <HintPath>..\packages\Com.Airbnb.iOS.Lottie.2.5.6\lib\xamarinios10\Lottie.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Com.OneSignal.Abstractions">
+      <HintPath>..\packages\Com.OneSignal.3.2.2\lib\Xamarin.iOS10\Com.OneSignal.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Com.OneSignal">
+      <HintPath>..\packages\Com.OneSignal.3.2.2\lib\Xamarin.iOS10\Com.OneSignal.dll</HintPath>
+    </Reference>
+    <Reference Include="OneSignal.iOS.Binding">
+      <HintPath>..\packages\Com.OneSignal.3.2.2\lib\Xamarin.iOS10\OneSignal.iOS.Binding.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Essentials">
+      <HintPath>..\packages\Xamarin.Essentials.1.0.1\lib\xamarinios10\Xamarin.Essentials.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading">
+      <HintPath>..\packages\Xamarin.FFImageLoading.2.4.4.859\lib\Xamarin.iOS10\FFImageLoading.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Platform">
+      <HintPath>..\packages\Xamarin.FFImageLoading.2.4.4.859\lib\Xamarin.iOS10\FFImageLoading.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\packages\Xamarin.Forms.3.4.0.1009999\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform">
+      <HintPath>..\packages\Xamarin.Forms.3.4.0.1009999\lib\Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform.iOS">
+      <HintPath>..\packages\Xamarin.Forms.3.4.0.1009999\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml">
+      <HintPath>..\packages\Xamarin.Forms.3.4.0.1009999\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="Lottie.Forms">
+      <HintPath>..\packages\Com.Airbnb.Xamarin.Forms.Lottie.2.7.0\lib\xamarinios10\Lottie.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Rg.Plugins.Popup">
+      <HintPath>..\packages\Rg.Plugins.Popup.1.1.5.180\lib\Xamarin.IOS\Rg.Plugins.Popup.dll</HintPath>
+    </Reference>
+    <Reference Include="Rg.Plugins.Popup.IOS">
+      <HintPath>..\packages\Rg.Plugins.Popup.1.1.5.180\lib\Xamarin.IOS\Rg.Plugins.Popup.IOS.dll</HintPath>
+    </Reference>
+    <Reference Include="IntelliAbb.Xamarin.Controls">
+      <HintPath>..\packages\IntelliAbb.Xamarin.Controls.1.0.148\lib\xamarinios10\IntelliAbb.Xamarin.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Forms">
+      <HintPath>..\packages\Xamarin.FFImageLoading.Forms.2.4.4.859\lib\Xamarin.iOS10\FFImageLoading.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Forms.Platform">
+      <HintPath>..\packages\Xamarin.FFImageLoading.Forms.2.4.4.859\lib\Xamarin.iOS10\FFImageLoading.Forms.Platform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Dependency\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="Animation\" />
+    <Folder Include="Assets.xcassets\survey.imageset\" />
+    <Folder Include="Assets.xcassets\survey.imageset\" />
+    <Folder Include="Assets.xcassets\ic_pets.imageset\" />
+    <Folder Include="Assets.xcassets\ic_florist.imageset\" />
+    <Folder Include="Assets.xcassets\ic_loyalty.imageset\" />
+    <Folder Include="Assets.xcassets\ic_info.imageset\" />
+    <Folder Include="Assets.xcassets\ic_home.imageset\" />
+    <Folder Include="Assets.xcassets\ic_rowing.imageset\" />
+    <Folder Include="Assets.xcassets\ic_about.imageset\" />
+    <Folder Include="Assets.xcassets\ic_mail.imageset\" />
+    <Folder Include="Assets.xcassets\ic_global.imageset\" />
+    <Folder Include="Assets.xcassets\ic_actors.imageset\" />
+    <Folder Include="Assets.xcassets\ic_message.imageset\" />
+    <Folder Include="Assets.xcassets\ic_store.imageset\" />
+    <Folder Include="Assets.xcassets\navIcon.imageset\" />
+    <Folder Include="Assets.xcassets\ic_winter.imageset\" />
+    <Folder Include="Assets.xcassets\ic_summer.imageset\" />
+    <Folder Include="Assets.xcassets\ic_spring.imageset\" />
+    <Folder Include="Assets.xcassets\ic_autumn.imageset\" />
+    <Folder Include="Assets.xcassets\ic_fature.imageset\" />
+    <Folder Include="Assets.xcassets\ic_past.imageset\" />
+    <Folder Include="Assets.xcassets\accwork.imageset\" />
+    <Folder Include="Assets.xcassets\up.imageset\" />
+    <Folder Include="Assets.xcassets\login_user.imageset\" />
+    <Folder Include="Assets.xcassets\login_lock.imageset\" />
+    <Folder Include="Assets.xcassets\ic_search.imageset\" />
+    <Folder Include="Assets.xcassets\ic_access_time.imageset\" />
+    <Folder Include="Assets.xcassets\ic_notification.imageset\" />
+    <Folder Include="Assets.xcassets\ic_uparrow.imageset\" />
+    <Folder Include="Assets.xcassets\ic_trophy.imageset\" />
+    <Folder Include="Assets.xcassets\ic_village.imageset\" />
+    <Folder Include="Assets.xcassets\ic_megaphone.imageset\" />
+    <Folder Include="Assets.xcassets\ic_outdoors.imageset\" />
+    <Folder Include="Assets.xcassets\ic_add_icon.imageset\" />
+    <Folder Include="Assets.xcassets\ic_icon_logout.imageset\" />
+    <Folder Include="Assets.xcassets\ic_icon_up.imageset\" />
+    <Folder Include="Assets.xcassets\ic_date_range.imageset\" />
+    <Folder Include="Assets.xcassets\ic_survey_event.imageset\" />
+    <Folder Include="Assets.xcassets\ic_home_w.imageset\" />
+    <Folder Include="Assets.xcassets\ic_drawer_event.imageset\" />
+    <Folder Include="Assets.xcassets\ic_eye_visible.imageset\" />
+    <Folder Include="Assets.xcassets\ic_eye_hide.imageset\" />
+    <Folder Include="Resources\Images\Checkbox\" />
+    <Folder Include="Assets.xcassets\ic_check_true.imageset\" />
+    <Folder Include="Assets.xcassets\ic_check_false.imageset\" />
+    <Folder Include="Assets.xcassets\ic_info_black.imageset\" />
+    <Folder Include="Assets.xcassets\splashImage.imageset\" />
+    <Folder Include="Assets.xcassets\splash.imageset\" />
+    <Folder Include="Assets.xcassets\tab_right_align.imageset\" />
+    <Folder Include="Assets.xcassets\tab_news.imageset\" />
+    <Folder Include="Assets.xcassets\tab_origami.imageset\" />
+    <Folder Include="Assets.xcassets\tab_write.imageset\" />
+    <Folder Include="Assets.xcassets\tab_gear.imageset\" />
+    <Folder Include="Assets.xcassets\tab_profil.imageset\" />
+    <Folder Include="Assets.xcassets\ic_menu_lock.imageset\" />
+    <Folder Include="Assets.xcassets\ic_menu_right.imageset\" />
+    <Folder Include="Assets.xcassets\ic_info_red.imageset\" />
+    <Folder Include="Assets.xcassets\ic_error.imageset\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="Devicehelper.cs" />
+    <Compile Include="Dependency\WebZoomRenderer.cs" />
+    <Compile Include="Dependency\EntRenderer.cs" />
+    <Compile Include="Dependency\ListCellRenderer.cs" />
+    <Compile Include="Dependency\EditorRend.cs" />
+    <Compile Include="Dependency\WebViewZoomRenderer.cs" />
+    <Compile Include="Dependency\NavigationPageRend.cs" />
+    <Compile Include="Dependency\PageRend.cs" />
+    <Compile Include="Dependency\TabRend.cs" />
+    <Compile Include="Dependency\SearchBarRend.cs" />
+    <Compile Include="Dependency\BarButtonItemExtensions.cs" />
+    <Compile Include="Dependency\ToolbarItemBadge.cs" />
+    <Compile Include="Dependency\GetSQliteConnection.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\selected_circle.png" />
+    <BundleResource Include="Resources\unselected_circle.png" />
+    <BundleResource Include="Resources\Images\RadioButton\checked.png" />
+    <BundleResource Include="Resources\Images\RadioButton\checked%402x.png" />
+    <BundleResource Include="Resources\Images\RadioButton\unchecked.png" />
+    <BundleResource Include="Resources\Images\RadioButton\unchecked%402x.png" />
+    <BundleResource Include="Resources\sca.json" />
+    <BundleResource Include="Resources\circleRed.png" />
+    <BundleResource Include="Animation\material_wave_loading.json" />
+    <BundleResource Include="Resources\.DS_Store" />
+    <BundleResource Include="Resources\intro1.png" />
+    <BundleResource Include="Resources\intro2.png" />
+    <BundleResource Include="Resources\intro3.png" />
+    <BundleResource Include="Resources\intro4.png" />
+    <BundleResource Include="Resources\cart.png" />
+    <BundleResource Include="Resources\pwChange.png" />
+    <BundleResource Include="Animation\success.json" />
+    <BundleResource Include="Animation\done.json" />
+    <BundleResource Include="Animation\serivce.json" />
+    <BundleResource Include="Resources\Images\Checkbox\checked_checkbox.png" />
+    <BundleResource Include="Resources\Images\Checkbox\checked_checkbox%402x.png" />
+    <BundleResource Include="Resources\Images\Checkbox\unchecked_checkbox.png" />
+    <BundleResource Include="Resources\Images\Checkbox\unchecked_checkbox%402x.png" />
+    <BundleResource Include="Resources\Images\Calendar\datecell.png" />
+    <BundleResource Include="Resources\Images\Calendar\datecellmarked.png" />
+    <BundleResource Include="Resources\Images\Calendar\datecellselected.png" />
+    <BundleResource Include="Resources\Images\Calendar\leftarrow.png" />
+    <BundleResource Include="Resources\Images\Calendar\rightarrow.png" />
+    <BundleResource Include="Resources\Images\Calendar\shadow.png" />
+    <BundleResource Include="Resources\Images\Calendar\today.png" />
+    <BundleResource Include="Resources\Images\Calendar\todayselected.png" />
+    <BundleResource Include="Resources\Images\Calendar\topbar.png" />
+    <BundleResource Include="Resources\checkX.png" />
+    <BundleResource Include="Resources\Montserrat-Bold.ttf" />
+    <BundleResource Include="Resources\Montserrat-Regular.ttf" />
+    <BundleResource Include="Resources\Montserrat-Medium.ttf" />
+    <BundleResource Include="Resources\Montserrat-Light.ttf" />
+    <BundleResource Include="Resources\licance.pdf" />
+    <BundleResource Include="Animation\loader.json" />
+    <BundleResource Include="Animation\search_ask.json" />
+    <BundleResource Include="Resources\add_circle.png" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\02\_u_int32_t.h-T0PUSFV0L002" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\02\audit.h-WL9AZUXPJN02" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\04\socket.h-3OC5D1VCZ0004" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\0D\CFSet.h-Q0Z7ZC2E2B0D" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\0F\objc.h-2IWAWHUFBE20F" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\0J\base.h-2CAVB194W1L0J" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\0K\NSObject.h-3FZ4VB6GDV0K" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\0K\OSAtomicDeprecated.h-3KYCA99VFQX0K" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\0K\_pthread_cond_t.h-PUHY1Z8NPQ0K" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\0N\vm_types.h-14264VE84AZ0N" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\0S\NSString.h-2N9658E1CGX0S" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\0W\err.h-2IO1BA5D9EG0W" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\0W\mach_host.h-269Z9P3PYU0W" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\0X\_ino64_t.h-21LQQB7CC440X" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\10\Block.h-1WFJS068FC410" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\11\_sa_family_t.h-KE5F59JO8211" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\11\_uintptr_t.h-8Z5JHAK8SR11" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\14\_nlink_t.h-2IEYN8QVQTT14" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\14\lockgroup_info.h-1099QUVOAZK14" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\18\NSException.h-2KLTB3H30XU18" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\1A\_u_char.h-AL5543JRT1A" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\1A\getopt.h-OSR921Z5Y51A" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\1B\_string.h-3LJQTJP0KAT1B" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\1F\NSUUID.h-2YP8R8855EM1F" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\1L\message.h-86323F5K5V1L" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\1O\shm.h-1HI258TZAR1O" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\1R\io.h-2LAC186M56L1R" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\1S\_wctrans_t.h-ACF3UNDF6T1S" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\1T\NSNotification.h-1G14T7S97H71T" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\1U\wchar.h-3M5NETJNVFM1U" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\1V\regex.h-2CYZS26FQ7M1V" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\1Y\kern_return.h-391DW6UPI0O1Y" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\1Z\NSExpression.h-2QFEQK8KDPH1Z" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\1Z\_pthread_types.h-WPYU2IVB421Z" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\1Z\vm_map.h-174X8NDQWVZ1Z" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\20\NSURLRequest.h-3KS88UH3L9A20" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\22\notify.h-3VATTVVXD6B22" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\29\NSAttributedString.h-L7F0RKHUYT29" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\29\NSLock.h-33NPZ5JY94G29" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\2A\xlocale.h-LHW1ESWCHU2A" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\2C\CFMessagePort.h-TF2XZGBES62C" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\2C\termios.h-1CKOBV62ALR2C" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\2E\vm_region.h-6PGX4TAUFP2E" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\2M\NSXPCConnection.h-24QLHAQVH472M" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\2P\_id_t.h-KYLPCHPEP82P" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\2Q\NSKeyValueCoding.h-1LZ0X6DJ2Z32Q" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\2Q\qos.h-362OMVMAA5U2Q" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\2S\NSByteOrder.h-12IQR8O3CZC2S" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\2T\fcntl.h-15PW0DP6UXF2T" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\2T\source.h-2KVH6U5XBS42T" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\2Z\CFBitVector.h-2NF4IMZ30BF2Z" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\34\_fsobj_id_t.h-24OA3MKGFQW34" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\38\NSIndexPath.h-37NJOCNT2M738" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\3A\_nl_item.h-3V30ESPUC2P3A" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\3A\mach_time.h-RIJQ2LHMCG3A" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\3D\_pthread_once_t.h-1A3OKQVYGBL3D" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\3I\mman.h-2772OFH5B193I" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\3L\NSTextCheckingResult.h-1QCYG8H80ZK3L" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\3L\_types.h-RWZT6G5BMQ3L" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\3M\group.h-2WG4D62MM7X3M" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\3Q\sem.h-23UPX1A5IZQ3Q" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\3S\SecImportExport.h-1IS3VZENKAO3S" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\3U\NSItemProvider.h-1P3M7OEBCND3U" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\3U\ifaddrs.h-24K52XK82CN3U" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\3V\stdarg.h-QAO9KFAFSY3V" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\3X\CFTimeZone.h-23XJ4MSJSM53X" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\42\CFSocket.h-3LN7VLUWCUH42" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\43\stddef.h-7A562PSIP43" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\45\resource.h-1XLTW14OP8645" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\46\stdio.h-587LAAV1B246" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\4L\_stdio.h-3UW34TA4YXP4L" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\4M\NSStream.h-2K9TTRK9O914M" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\4Q\_stdio.h-2TTGRE4FXPX4Q" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\4R\inet.h-3OL4XFDOJAL4R" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\4S\_guid_t.h-2AUJQCMPUB44S" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\4S\host_priv.h-280T3X510HC4S" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\4T\NSURLCache.h-SIAUI7MBN44T" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\4U\NSFileHandle.h-YI2GTJ606W4U" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\4V\hash_info.h-2EUNTPE9KPE4V" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\4W\xattr.h-2AZRLIONPCX4W" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\4X\CFPlugIn.h-36U27S2DJHJ4X" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\4Z\CFProxySupport.h-2I0C50T4J794Z" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\50\objc-auto.h-1CJ6Y5TABNY50" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\5D\CFArray.h-3E7Y24KV2RX5D" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\5I\NSFileManager.h-2SZRQVSY8C15I" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\5J\sched.h-S8KK9VEWG75J" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\5R\NSMeasurement.h-9GVSDAZR705R" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\5R\_structs.h-1JESV5E3YV85R" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\5R\_u_int8_t.h-2ILMAN6ZY2O5R" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\5R\dlfcn.h-3LULN766DQY5R" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\5S\_ssize_t.h-XQRK4VIGB45S" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\5V\_gid_t.h-1V4OKF1X7SP5V" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\5X\CFPreferences.h-2EVRLL5WD1I5X" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\5Y\lctx.h-SFJUSQ8OJ15Y" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\60\CFFTPStream.h-YRI2JF611Y60" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\60\CFFileSecurity.h-1ZBUCLUF5OU60" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\60\byte_order.h-YNE1F8LWKJ60" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\65\NSUserActivity.h-2P3GGV05T3065" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\67\qos.h-2W0VJZ7834G67" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\6B\base.h-FEQWXPDU6D6B" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\6B\mach_types.h-2CUR32P0ZJK6B" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\6C\NSScanner.h-Q3Z4PGP7C6C" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\6D\NSData.h-1LRDPJS9RMB6D" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\6E\MacTypes.h-L5J23E630H6E" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\6F\SecTrust.h-6MCJXST9AQ6F" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\6H\NSRegularExpression.h-3YX6GFTE516H" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\6J\CFNetDiagnostics.h-3ML3LIBCLTI6J" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\6K\NSDateInterval.h-1GJQ8283RER6K" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\6P\NSURL.h-CTSB7IJSE6P" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\6S\_inttypes.h-3S3AK87M1JC6S" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\6T\NSZone.h-1GKUC4CD7EB6T" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\6U\_timeval64.h-ARNX9IH4236U" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\71\semaphore.h-GZE00ZY0QJ71" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\75\termios.h-2ARYBRYUJAP75" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\76\time.h-185BNDAAH6M76" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\78\NSPointerFunctions.h-2PASY8ZRZA678" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\79\NSValueTransformer.h-1JB0TPW6UTA79" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\7C\NSRunLoop.h-1T6P6YZ96RS7C" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\7G\NSDictionary.h-CXYWAAF0R77G" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\7Q\time.h-39ES837JE1P7Q" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\7Z\NSMethodSignature.h-29O8MO23V477Z" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\84\objc-exception.h-1TXMC1EN2484" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\85\_stdio.h-OKGEMPJQD485" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\89\NSURLProtectionSpace.h-3C7X3I4QY3089" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\8A\CFStringTokenizer.h-3KZAPEWGS2V8A" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\8E\_u_int16_t.h-1HTS0PFIJR88E" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\8H\NSPort.h-1YP0VISXOVP8H" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\8H\_langinfo.h-22PY61WARKI8H" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\8J\_pthread_key_t.h-WES81ZELU98J" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\8J\complex.h-1W5FI2KCGK18J" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\8R\__wctype.h-SFOKJGCQOC8R" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\8R\block.h-J8DG3FRV1U8R" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\8T\_pthread_t.h-W7LCIFISM78T" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\8T\vm_behavior.h-7H7RC5SZ698T" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\8T\vm_sync.h-UE9LI2XTKX8T" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\8V\NSHashTable.h-3RTEX3CGS5H8V" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\8V\vm_inherit.h-U9G1HJCC518V" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\8W\_caddr_t.h-DBF66OB7G78W" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\92\SecProtocolOptions.h-35NREPQOPPP92" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\95\NSXMLParser.h-MPJX29NTJ295" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\98\NSFilePresenter.h-WITKCD7X7U98" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\9A\CFLocale.h-15JHG8GPFBK9A" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\9A\CipherSuite.h-1FWVE9YHA0H9A" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\9E\vm_statistics.h-SL1KQWLOYD9E" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\9G\strings.h-1QANIQ4CSB69G" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\9I\_ino_t.h-17AQ5EJ55OE9I" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\9K\if.h-1NN6R2J8INR9K" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\9L\ndbm.h-X7SX0YP1QN9L" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\9R\types.h-CAZJTF7MMU9R" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\9T\objc-sync.h-R5J69DCKG79T" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\A0\vm_prot.h-2UECCB82ITLA0" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\A1\spawn.h-36NGSO9D4BEA1" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\A2\ipc_info.h-34FCE8CK51SA2" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\AC\_fsblkcnt_t.h-ZIPYW8RP53AC" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\AE\kdebug_signpost.h-H1VEV1TLJ8AE" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\AF\CFURLAccess.h-2VAE741KY4OAF" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\AH\CFDate.h-2CX0BR5ANDEAH" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\AH\_OSByteOrder.h-1DTBXJQDSRJAH" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\AL\NSURLConnection.h-31KP5YEXWN9AL" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\AL\OSAtomicQueue.h-3J2E2ZKXS04AL" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\AL\SecAccessControl.h-1HV3FVV2CXTAL" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\AL\_time_t.h-1TFXGHSH12AAL" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\AM\runetype.h-1JGI6Y00F9VAM" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\AQ\NSPredicate.h-3KTP1ZO67YEAQ" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\AQ\clonefile.h-142VY7VB5Y3AQ" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\B0\netdb.h-2N3Y77P077B0" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\B2\NSDateComponentsFormatter.h-2ICHN8T4M74B2" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\B7\NSProcessInfo.h-ZMWDO5KMI3B7" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\BA\fenv.h-83TEDQHFW1BA" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\BA\vm.h-1VUM9LWMQC6BA" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\BB\_intptr_t.h-TI1IRGDEMSBB" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\BB\stat.h-2IUJ21RMHVDBB" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\BG\SecRandom.h-3V76UA62HWZBG" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\BH\error.h-3NOCW9DPH9BBH" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\BI\_key_t.h-1HSEC4W9ZDIBI" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\BI\malloc.h-26HKS1VFV00BI" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\BI\search.h-3TXNEBK8JPABI" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\BJ\NSURLError.h-3C0SHEUA7D1BJ" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\BM\SecItem.h-G1M7MJMFPDBM" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\BN\NSLocale.h-1L024FLSUKUBN" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\BR\_pid_t.h-2ZTS6SBMBSKBR" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\BT\_va_list.h-2MHHGR75H5HBT" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\BT\fmtmsg.h-3OCCZ6EURXQBT" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\BU\ucred.h-TW8FGKJKVKBU" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\BX\NSFormatter.h-RAAUCPR443BX" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\BZ\NSDateIntervalFormatter.h-25HGS95EUDKBZ" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\C0\_ct_rune_t.h-3O9CACMICJRC0" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\C1\wait.h-D0CJHJUB8PC1" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\C3\task_policy.h-1SAEK42ISSWC3" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\C6\policy.h-2SSONHT7F05C6" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\C7\_regex.h-SLHBRZBU7DC7" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\C9\_socklen_t.h-2Q83MJWWP3PC9" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\CA\__stddef_max_align_t.h-XM6GLEQW65CA" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\CF\_int64_t.h-3P198YHEJ8ICF" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\CI\inttypes.h-OS03VVTFKXCI" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\CP\NSCalendar.h-2SGNTIDELTFCP" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\CP\statvfs.h-KHFHAYMRD1CP" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\CS\NSNetServices.h-2VS33HCGFNICS" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\CV\kauth.h-3NH5SUKDQJ8CV" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\CW\CFUtilities.h-3718GJORA3VCW" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\D3\time.h-60KI7IWMFKD3" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\D7\_monetary.h-3LQCXRSDK4YD7" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\DD\_select.h-G4R9XT2PFKDD" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\DF\NSCoder.h-2ZDXZINEHB2DF" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\DH\NSURLCredentialStorage.h-3UJ9I9DO2G5DH" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\DJ\NSISO8601DateFormatter.h-3C7H84AQPDQDJ" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\DL\CFFileDescriptor.h-2GX400BG2A0DL" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\DN\NSMassFormatter.h-VNZL0PPO0GDN" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\DP\_types.h-KV54GI7620DP" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\DR\alloca.h-2P7XRU8DID0DR" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\DR\boolean.h-2BI87EGCYWNDR" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\DS\_int16_t.h-1B6FM4K3WRWDS" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\DT\NSURLAuthenticationChallenge.h-3ON8XKR8UK8DT" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\DV\_u_int.h-1MI99WHXFA2DV" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\DV\glob.h-19BELJ181RWDV" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\DZ\CFAttributedString.h-3KQAHW0TV2LDZ" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\DZ\NSExtensionContext.h-VK89DMHDADDZ" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\DZ\_pthread_attr_t.h-2Q6BE87QG8WDZ" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\E1\semaphore.h-X9SUZWANW1E1" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\E7\CFDictionary.h-32XZSJN5DZ8E7" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\EA\if_dl.h-33HRC3FJ3F0EA" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\EB\_mach_port_t.h-1QYPDPAOZ6YEB" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\EE\task_inspect.h-3VUKL6IC0GXEE" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\EE\vm_page_size.h-A0R3552CYAEE" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\EG\CFError.h-2UURZ0WS03NEG" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\EG\NSDecimalNumber.h-1FJHJOIV3K6EG" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\EG\tgmath.h-21D53KGRGYDEG" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\EM\NSProxy.h-1IETCWBBIRFEM" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\EO\clock_reply.h-YJ88YY9VMVEO" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\EO\ipc.h-1C6EX6QDRPPEO" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\EY\_in_port_t.h-204BHLXOM1PEY" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\F2\AppDelegate.h-F94KEY9QROF2" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\F7\CFNumber.h-Q95RAXFB73F7" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\F8\runtime.h-17FAGA8SA18F8" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\FB\OSByteOrder.h-19E0V5BMIIBFB" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\FD\_uintmax_t.h-1WVHJK76T8OFD" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\FE\vm_attributes.h-Z430UPDQGGFE" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\FF\NSTimeZone.h-2JJ9OXU74T0FF" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\FJ\NSFileVersion.h-33RVQDG6O2GFJ" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\FK\signal.h-1TXECWGRA5SFK" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\FL\CFNumberFormatter.h-37TNC1RB3V7FL" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\FL\_wint_t.h-15CMTDGRC5FL" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\FQ\machine.h-85A6NNF03AFQ" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\FR\_clock_t.h-397MW3RV8YJFR" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\FT\_suseconds_t.h-3KA5IY7WWVFT" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\FT\signal.h-6YDV4ZB88TFT" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\FV\_dev_t.h-UT7EIR41JQFV" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\FY\vm_info.h-FRW239IGAZFY" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\FZ\exception_types.h-1RRKHFM8XNQFZ" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\G2\_fsid_t.h-307SEYLQSZ0G2" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\G4\CFDateFormatter.h-3BL2WKU0ON8G4" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\G5\CFURLEnumerator.h-3DU0Q8C9S31G5" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\G6\NSCache.h-75UR8WSZ25G6" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\G7\NSObject.h-ET6OHNKCFG7" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\GA\CFString.h-TRHBW307TEGA" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\GA\NSDecimal.h-28C6QYDRFTEGA" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\GA\sync_policy.h-36E4S2RRWWRGA" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\GB\CFHTTPAuthentication.h-29ZWRCWIZN6GB" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\GB\CFNetServices.h-3276KUV2QZIGB" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\GD\_pthread_mutex_t.h-Y6N3475HL6GD" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\GK\SecProtocolTypes.h-XEK5G1MIVBGK" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\GK\stdlib.h-2ODEMI4M5P8GK" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\GR\CFMachPort.h-3LX4XFFKTGKGR" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\GR\ttycom.h-268H025M4PCGR" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\GW\_ctype.h-21A9G0VT5QMGW" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\H3\NSMetadataAttributes.h-27Q5LFNEOXHH3" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\H7\ftw.h-8TE5C4E2TCH7" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\H8\types.h-23RDJJG9FKNH8" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\H8\unistd.h-3BU9CRTD8KRH8" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\HA\_timespec.h-2B2QVQL8SWAHA" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\HA\signal.h-21YAU6DL1LMHA" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\HB\CFPlugInCOM.h-77WB98O6DNHB" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\HD\CFHTTPMessage.h-385GOPFMUWLHD" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\HF\NSURLSession.h-3A1OLGZGGPNHF" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\HF\NSUnit.h-NIO2VKN2C5HF" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\HI\_wchar.h-38CKEYFRPV3HI" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\HJ\CFBag.h-2PUOI0245SPHJ" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\HM\NSIndexSet.h-1XLG0C8FC5EHM" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\HM\OSSpinLockDeprecated.h-2EMEAP4M27FHM" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\HM\fnmatch.h-3VOPKT3US3NHM" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\HO\iconv.h-OAOJBFQ0X8HO" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\HQ\CFNetworkErrors.h-REQVZCXKXSHQ" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\HV\CFPropertyList.h-HQH5M0MXH7HV" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\I8\thread_info.h-29S5DBOJJELI8" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\IA\CFHost.h-1X4KIQZ85D0IA" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\IA\_intmax_t.h-1LGZ3LVEMN2IA" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\IB\_fd_def.h-2YO1LCV7ORLIB" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\IE\_mcontext.h-1BZ6ET90PN6IE" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\IE\thread_act.h-2XOF305V88BIE" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\IH\task_special_ports.h-10W9O2OZCLEIH" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\IL\NSMetadata.h-1YO4WVWMO2CIL" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\IN\_int8_t.h-3RPSTOA2L3MIN" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\IP\assert.h-2S0IJXH4B52IP" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\IR\lock_set.h-11WP1RR7WZ8IR" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\IX\in.h-2WBPQB3I9W2IX" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\IZ\_wctype_t.h-IMIGO8XOFNIZ" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\J4\CFUUID.h-8LRVMOAGD5J4" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\J4\NSUbiquitousKeyValueStore.h-15YIR8CP18UJ4" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\J4\rpc.h-14ZYBAS5IBLJ4" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\J5\pwd.h-2ZZOADHOKOLJ5" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\J9\NSCharacterSet.h-N6Z1ZQWRWCJ9" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\JF\_pthread_rwlock_t.h-2P8E3IHJ1LXJF" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\JI\dirent.h-1JRVKNO4KI1JI" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\JJ\port.h-2KWSMFAV1C7JJ" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\JK\readpassphrase.h-3O4LF3VYY2RJK" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\JO\NSHTTPCookie.h-2CKVBS8UE00JO" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\JO\_ucontext64.h-20J6Q0UBX7VJO" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\JO\utsname.h-389B74AJXFTJO" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\K2\host_security.h-1JECEF05G1JK2" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\K3\NSCompoundPredicate.h-35G28QFBWJMK3" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\K3\NSMapTable.h-2UJVVYM0K18K3" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\K5\NSFileCoordinator.h-33IT811HJSTK5" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\K6\exc.h-QB802XO1WWK6" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\K7\uio.h-3KXBO7TQCICK7" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\K9\CFBase.h-QGV4JBCKV7K9" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\KA\NSComparisonPredicate.h-1NVBVPZLI6QKA" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\KA\NSSortDescriptor.h-2UHL2PUEMSHKA" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\KI\object.h-2YC9SGVN0DCKI" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\KJ\processor.h-8C0VSGCT4VKJ" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\KP\mach_error.h-1IBQUH2D0ZKKP" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\KT\port_obj.h-R8XVUQK4D7KT" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\KX\clock_types.h-279CNL512SWKX" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\L2\attr.h-17Q4ZYD9294L2" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\L3\_ptrdiff_t.h-2KLIQAGSKZLL3" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\L5\mach_init.h-B3TG6UATXBL5" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\L5\once.h-2WVSW9QY3UXL5" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\LA\NSExtensionRequestHandling.h-2BPLX1PSV24LA" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\LA\NSPropertyList.h-14W5YEDDRZGLA" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\LC\sysctl.h-247CZFFW5YULC" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\LD\SecProtocolMetadata.h-LU5PQ5ADOBLD" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\LJ\stdatomic.h-1J2NQLRZ0TXLJ" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\LM\mach_debug_types.h-ZDWNQ0DN08LM" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\LO\acl.h-3LRUILOW4Y6LO" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\LS\mach_port.h-2KX02GWTRDDLS" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\LU\math.h-1TYEEU1Z50GLU" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\LU\pthread.h-2TMFEB8GHUQLU" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\M2\NSEnumerator.h-1GBK6EKTB1LM2" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\MC\_wctype.h-2T811VX2OH6MC" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\MG\thread_policy.h-FHAYBD07SSMG" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\ML\SecBase.h-2XSF875C678ML" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\MO\host_info.h-2RPODC9QTSAMO" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\MO\task_info.h-343S1DCA4L0MO" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\MP\clock.h-3EHOZHN9NMZMP" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\MS\message.h-1EXQV61PK2GMS" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\MU\_size_t.h-3RC8C02LJ7ZMU" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\MW\CFHTTPStream.h-190GZM83NJFMW" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\MY\SecIdentity.h-FUGF79F4ORMY" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\MZ\_blkcnt_t.h-31AQQHK77DQMZ" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\N5\_xlocale.h-2VUIJADDSBPN5" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\N6\gethostuuid.h-1IJKETD2YM7N6" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\N7\NSThread.h-2T1EC37E3BDN7" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\N8\NSURLCredential.h-14HV4A5TQGMN8" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\N9\CFData.h-3SCW4D3UB64N9" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\N9\NSDateFormatter.h-3M2K36HOUCKN9" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\NA\vm_types.h-2DOJ22OMZJ9NA" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\NE\utime.h-1WL4N7LHT8LNE" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\NN\_regex.h-203U8K7B3VTNN" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\NQ\dirent.h-GOVC66KUI5NQ" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\NW\CFBundle.h-8OVOWI8TGMNW" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\NX\NSValue.h-O7HRI8Q75SNX" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\NZ\NSDate.h-PTU7IKVCZCNZ" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\NZ\setjmp.h-LH5BN9MFCUNZ" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\O8\langinfo.h-1SOE7293DN6O8" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\OA\CFBinaryHeap.h-C3MXQBJICWOA" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\OB\NSOrderedSet.h-3J0V1VN9JVBOB" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\OD\kmod.h-18GTVOKHE83OD" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\OE\pthread_spis.h-25OVPJF5BR7OE" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\OH\SecureTransport.h-1Q8W28PJ0IZOH" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\OI\processor_set.h-3GCG65JKC6SOI" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\OM\NSLengthFormatter.h-28GNMXWTXNFOM" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\OP\_off_t.h-2GMEWVL0VM4OP" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\OQ\NSFileWrapper.h-2PTJYBQO8WYOQ" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\OT\nl_types.h-2DTVU54J7AOT" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\OW\thread_status.h-38HDQS4UP4GOW" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\P5\AppDelegate.m-134QJO2OQ7TP5" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\P8\SecKey.h-3HJB27QT0EJP8" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\P9\_timeval32.h-35Z8LPJ77F7P9" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\PA\mig_errors.h-AQ1T6X96A6PA" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\PB\NSHTTPCookieStorage.h-37CQR2J3FGPPB" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\PC\_u_int64_t.h-27PJLEKZMJOPC" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\PC\_wchar_t.h-2E42SGCOTLPPC" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\PD\SecProtocolObject.h-E1HY4DU0UZPD" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\PH\NSLinguisticTagger.h-3SCX3RGDW3NPH" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\PH\copyfile.h-3KP9I75U6RNPH" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\PI\msg.h-3TXO8JAALIVPI" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\PK\mach.h-16CQSWPRXK2PK" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\PO\_uid_t.h-3HUO9TJLG6IPO" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\PT\NSObjCRuntime.h-IXHLMAWDJVPT" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\PU\_fsfilcnt_t.h-2NFQO00BJFPU" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\PV\_iovec_t.h-2ARZ2SJJIRPPV" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\PV\_u_short.h-4LKPJLP64GPV" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\Q6\times.h-FJWF1YWRMBQ6" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\Q7\un.h-PSIR8WDIC4Q7" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\QC\NSObjCRuntime.h-1TDF64YNZE6QC" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\QD\object.h-HSSUZLH50VQD" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\QE\_malloc.h-14XPEZL7UE6QE" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\QG\NSSet.h-3OXZOUOK0YJQG" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\QJ\SecCertificate.h-E6YEHVBDZEQJ" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\QK\CFRunLoop.h-2ZBBG7YQSVHQK" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\QK\CFStringEncodingExt.h-ZJAD914O7TQK" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\QN\_stdlib.h-HQ0VXCVX73QN" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\QQ\memory_object_types.h-1LUFR6N9MQKQQ" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\QW\tcp.h-2LX6QI9RKRDQW" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\QY\page_info.h-KQ256DPNOMQY" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\QY\rbtree.h-3FJQ5C11AEOQY" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\R1\if_var.h-Q9T708RLFXR1" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\R4\aio.h-JD4OV7OQDR4" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\R5\_locale.h-13UDXWUSKAUR5" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\R7\OSByteOrder.h-QI8LQC61WZR7" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\RA\NSPersonNameComponents.h-ZNWUGJO574RA" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\RD\xattr_flags.h-2438DFB7NDERD" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\RG\NSAutoreleasePool.h-DX9Q2XEW8HRG" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\RI\_mbstate_t.h-3A6QXEKSIAFRI" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\RI\_sigset_t.h-S2IFNULU1JRI" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\RI\time_value.h-1YDEPRWNUH4RI" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\RQ\util.h-2UYVLAPI0X4RQ" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\RR\select.h-3K85QAXFF6TRR" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\S5\NSURLResponse.h-3UHS1LZI3C0S5" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\S5\utmpx.h-1QY280U3P5BS5" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\S9\NSOperation.h-2RL1G726X4ZS9" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\SB\CFStream.h-250Y0VZUZ4USB" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\SC\_filesec_t.h-224PFN1SRLISC" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\SE\ioctl.h-16MSY9GD55USE" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\SH\NSProgress.h-CLPSLA4B8SSH" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\SJ\CFSocketStream.h-2GMTKG0ATY8SJ" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\SL\NSOrthography.h-33QS2OAL7UMSL" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\SM\_time.h-OY1WWJLSPTSM" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\SN\_ctype.h-B4CEWHC0EQSN" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\SO\grp.h-14EEVBHEJS5SO" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\SP\monetary.h-20297JZNYZASP" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\SR\stdint.h-5E5WXBPFGCSR" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\T1\_ucontext.h-2048PGL563QT1" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\T2\_pthread_condattr_t.h-1KJFTV1NPJET2" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\T2\_uint8_t.h-2XRBTIX0AAQT2" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\T2\mount.h-3AR5H6D7J2DT2" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\T3\clock_priv.h-13KVY74602IT3" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\T4\_rsize_t.h-3GCVH2WI17ST4" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\TB\mach_traps.h-25LZJDFOJW1TB" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\TH\queue.h-BZP1IFRF8LTH" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\TK\in6.h-3P4775K4QMWTK" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\TR\wctype.h-9HLM0JIB0GTR" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\TX\_in_addr_t.h-IXZPHW012TX" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\U0\uuid.h-2RDFYXTF559U0" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\U4\proc.h-3PFRUQQ7Q40U4" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\U7\_uint64_t.h-J7AA380QTHU7" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\UC\NSNull.h-3GGEHYBED4YUC" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\UG\NSRange.h-1DVMHO1TUSXUG" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\UM\NSEnergyFormatter.h-1RAX6YSSD83UM" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\UO\libgen.h-3B3PZXGOA32UO" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\UP\CFByteOrder.h-BZXIZ52ZHYUP" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\UP\NSNotificationQueue.h-3MATVS6W7CYUP" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\UQ\ulimit.h-38LVW3QJIRIUQ" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\UU\timeb.h-1WJM3RJ86N1UU" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\UV\CFNotificationCenter.h-1TZPTAMXWJ9UV" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\UW\_useconds_t.h-162K2A25TXQUW" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\UY\_int32_t.h-2KZBZONFU2WUY" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\V1\_uint16_t.h-A2QPR8882XV1" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\V9\lock.h-3E6710K7DTWV9" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\VC\CFURL.h-35476R0WQFHVC" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\VC\FoundationErrors.h-MX7LE3D3J8VC" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\VC\NSUndoManager.h-2ORCU2KOQOSVC" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\VD\NSMeasurementFormatter.h-OZAEGO31BEVD" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\VF\NSURLProtocol.h-29B3SEURRC2VF" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\VG\_timeval.h-31H6FGXBJZBVG" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\VJ\NSKeyValueObserving.h-X45ED2KZY0VJ" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\VP\_uint32_t.h-152L297DHSQVP" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\VP\vm_purgable.h-2G8IT9S6Z5PVP" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\VT\mach_voucher_types.h-184CMTPHN7YVT" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\VZ\string.h-2MRDUOPPIY0VZ" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\W1\_pthread_mutexattr_t.h-2NZ9OF01SX0W1" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\W5\SecSharedCredential.h-2624UNYQA8AW5" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\W7\errno.h-E00MQHBAUBW7" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\W9\CFCharacterSet.h-37U1OZWFLNNW9" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\WI\task.h-1TZ4EZ59SELWI" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\WJ\NSExtensionItem.h-TJ65H0Y7K5WJ" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\WK\event.h-B2DFE63HXVWK" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\WN\_errno_t.h-2KEHEKUBYY1WN" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\WO\processor_info.h-28GE9TK9KNNWO" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\WP\_pthread_rwlockattr_t.h-15446MBE1AZWP" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\WR\CFCalendar.h-19H0J3E3TFDWR" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\WV\_sigaltstack.h-UEAZW4FNEWV" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\X0\NSTimer.h-GNY5A2KC0XX0" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\X5\poll.h-L8ZHHBHUJMX5" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\X8\NSArray.h-FPTRELJJ6NX8" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\XB\zone_info.h-1SI6S711B7TXB" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\XD\_blksize_t.h-2P7YNUKVPUXD" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\XE\CFTree.h-1TRXV5V7ASMXE" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\XI\stdio.h-1I3S44XGYGLXI" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\XI\unistd.h-27CJR042VBNXI" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\XM\spawn.h-2OGUOSC60QLXM" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\XS\_mode_t.h-36A0JMOZ0S7XS" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\XX\mig.h-2NP4RMQMVJ8XX" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\XZ\SecPolicy.h-3HV4JOZEIS3XZ" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\XZ\locale.h-UGQPYKBS39XZ" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\Y1\NSJSONSerialization.h-1L65LDIFREDY1" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\Y4\NSKeyedArchiver.h-3J2LPU9RIY4Y4" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\Y7\quota.h-1VNS9ROKBEQY7" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\Y9\NSError.h-2R0K69VEWX5Y9" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\YA\NSBundle.h-21LHGEYAMQVYA" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\YB\NSPointerArray.h-2Z7VNNQEJE6YB" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\YB\ndr.h-2QHPQ9LG4AJYB" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\YO\NSPathUtilities.h-38JTFO9ZXG4YO" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\YO\NSPersonNameComponentsFormatter.h-GCN34AU0GRYO" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\YO\semaphore.h-CVPYPQ5ZV8YO" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\YS\NSByteCountFormatter.h-G9C86X7E0YS" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\YS\syslog.h-3VMVMXLKLXDYS" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\YV\thread_status.h-175EN8B3ODZYV" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\YW\NSUserDefaults.h-MOS4V52AC4YW" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\Z2\NSNumberFormatter.h-397Q4P2X9J0Z2" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\Z3\_uuid_t.h-1VNQUIHUMFTZ3" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\ZA\_rune_t.h-1CDFTKXUHBWZA" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\ZA\dyld_kernel.h-2B7E7JI8VMGZA" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\ZC\data.h-IDBBS9CFVZZC" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\ZF\wordexp.h-3L546R0EFQNZF" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\ZM\NSInvocation.h-PSFB4D7YRWZM" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\ZT\_wctype.h-2W0DJ25VNV6ZT" />
+    <BundleResource Include="Resources\Index\DataStore\v5\records\ZU\_types.h-3KWMKBBEXPYZU" />
+    <BundleResource Include="Resources\Index\DataStore\v5\units\AppDelegate.o-OSRCJRA3KATM" />
+    <BundleResource Include="Resources\Index\DataStore\v5\units\CFNetwork-3188M7OK0JW08.pcm-3QNLSTNHTEAIU" />
+    <BundleResource Include="Resources\Index\DataStore\v5\units\CoreFoundation-J9ZOXGK4ZTRR.pcm-36R1DVTV33P2W" />
+    <BundleResource Include="Resources\Index\DataStore\v5\units\Darwin-38I6DLZ5IH61J.pcm-1IMM7J8T7U95F" />
+    <BundleResource Include="Resources\Index\DataStore\v5\units\Dispatch-2LX9MWM6UEPQW.pcm-22LVPXDA0OP5V" />
+    <BundleResource Include="Resources\Index\DataStore\v5\units\Foundation-3DFYNEBRQSXST.pcm-2090KZ6Q4NIIG" />
+    <BundleResource Include="Resources\Index\DataStore\v5\units\ObjectiveC-1R06XOY9T4FIM.pcm-K6MVV8WLSBF4" />
+    <BundleResource Include="Resources\Index\DataStore\v5\units\Security-27ZMYP8CODFT0.pcm-3R2TCCRFN5LKV" />
+    <BundleResource Include="Resources\Index\DataStore\v5\units\_Builtin_stddef_max_align_t-3CTI72Y6O698R.pcm-A06UIEP4BN2N" />
+    <BundleResource Include="Resources\Index\DataStore\v5\units\os_object-38I6DLZ5IH61J.pcm-5ABKPP6MJTAF" />
+    <BundleResource Include="Resources\Index\DataStore\v5\units\AppDelegate.o-3EX6UP2F5T49T" />
+    <BundleResource Include="Resources\Index\DataStore\v5\units\CFNetwork-3188M7OK0JW08.pcm-2PAGFVYJ4PQPG" />
+    <BundleResource Include="Resources\Index\DataStore\v5\units\CoreFoundation-J9ZOXGK4ZTRR.pcm-23NXCDYVRSV0B" />
+    <BundleResource Include="Resources\Index\DataStore\v5\units\Darwin-38I6DLZ5IH61J.pcm-1K66NUL39G8KB" />
+    <BundleResource Include="Resources\Index\DataStore\v5\units\Dispatch-2LX9MWM6UEPQW.pcm-39FNCZXMXGZKC" />
+    <BundleResource Include="Resources\Index\DataStore\v5\units\Foundation-3DFYNEBRQSXST.pcm-1A3IDQGNYE5EI" />
+    <BundleResource Include="Resources\Index\DataStore\v5\units\ObjectiveC-1R06XOY9T4FIM.pcm-1O3KV5A4NTQTO" />
+    <BundleResource Include="Resources\Index\DataStore\v5\units\Security-27ZMYP8CODFT0.pcm-1Q5CWQIOWKGVH" />
+    <BundleResource Include="Resources\Index\DataStore\v5\units\_Builtin_stddef_max_align_t-3CTI72Y6O698R.pcm-17XNNB41NDM2W" />
+    <BundleResource Include="Resources\Index\DataStore\v5\units\os_object-38I6DLZ5IH61J.pcm-34A4A3CH8RF09" />
+    <BundleResource Include="Resources\Index\DataStore\v5\units\AppDelegate.o-3F0G18TRFO5L3" />
+    <BundleResource Include="Resources\Index\DataStore\v5\units\CFNetwork-3188M7OK0JW08.pcm-371ASTEMQFAAQ" />
+    <BundleResource Include="Resources\Index\DataStore\v5\units\CoreFoundation-J9ZOXGK4ZTRR.pcm-2XSEQNX12X5EE" />
+    <BundleResource Include="Resources\Index\DataStore\v5\units\Darwin-38I6DLZ5IH61J.pcm-2U6ZMUHWSERSP" />
+    <BundleResource Include="Resources\Index\DataStore\v5\units\Dispatch-2LX9MWM6UEPQW.pcm-2E37QL9X7G3V6" />
+    <BundleResource Include="Resources\Index\DataStore\v5\units\Foundation-3DFYNEBRQSXST.pcm-3VXOKQR1AZ691" />
+    <BundleResource Include="Resources\Index\DataStore\v5\units\ObjectiveC-1R06XOY9T4FIM.pcm-25NGXV2VQELH6" />
+    <BundleResource Include="Resources\Index\DataStore\v5\units\Security-27ZMYP8CODFT0.pcm-31X2U8H9PJOT8" />
+    <BundleResource Include="Resources\Index\DataStore\v5\units\_Builtin_stddef_max_align_t-3CTI72Y6O698R.pcm-2IMSWKYWMV59N" />
+    <BundleResource Include="Resources\Index\DataStore\v5\units\os_object-38I6DLZ5IH61J.pcm-2RCMOHOA3LXLK" />
+    <BundleResource Include="Resources\promotion.png" />
+    <BundleResource Include="Resources\tek.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage-1.launchimage\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\boshoku.png" />
+    <ImageAsset Include="Assets.xcassets\busnotify.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\busnotify.imageset\busnotify.png" />
+    <ImageAsset Include="Assets.xcassets\defaultProfile.imageset\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\defaultProfile.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\defaultProfile.imageset\defaultProfile.png" />
+    <ImageAsset Include="Assets.xcassets\eatmenu.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\eatmenu.imageset\eatmenu.png" />
+    <ImageAsset Include="Assets.xcassets\familyparti.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\familyparti.imageset\familyparti.png" />
+    <ImageAsset Include="Assets.xcassets\feed.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\feed.imageset\feed.png" />
+    <ImageAsset Include="Assets.xcassets\flag.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\flag.imageset\flag.png" />
+    <ImageAsset Include="Assets.xcassets\hmenu.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\hmenu.imageset\hmenu.png" />
+    <ImageAsset Include="Assets.xcassets\left.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\left.imageset\left.png" />
+    <ImageAsset Include="Assets.xcassets\left.imageset\leftIcon.png" />
+    <ImageAsset Include="Assets.xcassets\leftarrow.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\leftarrow.imageset\leftarrow.png" />
+    <ImageAsset Include="Assets.xcassets\loginBackground.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\loginBackground.imageset\loginBackground.png" />
+    <ImageAsset Include="Assets.xcassets\loginIcon.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\loginIcon.imageset\loginIcon.png" />
+    <ImageAsset Include="Assets.xcassets\monthuser.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\monthuser.imageset\monthuser.png" />
+    <ImageAsset Include="Assets.xcassets\openpositions.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\openpositions.imageset\openpostions.png" />
+    <ImageAsset Include="Assets.xcassets\passwordIconLarge.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\passwordIconLarge.imageset\passwordIconLarge.png" />
+    <ImageAsset Include="Assets.xcassets\productplan.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\productplan.imageset\productplan.png" />
+    <ImageAsset Include="Assets.xcassets\right.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\right.imageset\right.png" />
+    <ImageAsset Include="Assets.xcassets\safetygroup.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\safetygroup.imageset\safety.jpg" />
+    <ImageAsset Include="Assets.xcassets\servicehours.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\servicehours.imageset\servicehours.png" />
+    <ImageAsset Include="Assets.xcassets\setting.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\setting.imageset\setting.png" />
+    <ImageAsset Include="Assets.xcassets\sidetop.imageset\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\sidetop.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\sidetop.imageset\sidetop.png" />
+    <ImageAsset Include="Assets.xcassets\socialrespon.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\socialrespon.imageset\socialrespon.png" />
+    <ImageAsset Include="Assets.xcassets\subicon.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\subicon.imageset\subicon.png" />
+    <ImageAsset Include="Assets.xcassets\surveyIcon.imageset\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\surveyIcon.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\surveyIcon.imageset\surveyIcon.png" />
+    <ImageAsset Include="Assets.xcassets\uploads.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\uploads.imageset\uploads.png" />
+    <ImageAsset Include="Assets.xcassets\userIcon.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\userIcon.imageset\iconUser.png" />
+    <ImageAsset Include="Assets.xcassets\userPass.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\userPass.imageset\userPass.png" />
+    <ImageAsset Include="Assets.xcassets\visitor.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\visitor.imageset\visitor.png" />
+    <ImageAsset Include="Assets.xcassets\survey.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\survey.imageset\survey.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\splashImage.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Assets.xcassets\splashImage.imageset\splashImage.png" />
+    <ImageAsset Include="Assets.xcassets\ic_loyalty.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_loyalty.imageset\ic_loyalty.png" />
+    <ImageAsset Include="Assets.xcassets\ic_info.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_info.imageset\ic_info.png" />
+    <ImageAsset Include="Assets.xcassets\ic_home.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_home.imageset\ic_home.png" />
+    <ImageAsset Include="Assets.xcassets\ic_rowing.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_rowing.imageset\ic_rowing.png" />
+    <ImageAsset Include="Assets.xcassets\ic_about.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_about.imageset\ic_about.png" />
+    <ImageAsset Include="Assets.xcassets\ic_mail.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_mail.imageset\ic_mail.png" />
+    <ImageAsset Include="Assets.xcassets\ic_actors.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_actors.imageset\ic_actors.png" />
+    <ImageAsset Include="Assets.xcassets\ic_message.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_message.imageset\ic_message.png" />
+    <ImageAsset Include="Assets.xcassets\ic_store.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_store.imageset\ic_store.png" />
+    <ImageAsset Include="Assets.xcassets\navIcon.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_winter.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_winter.imageset\ic_winter.png" />
+    <ImageAsset Include="Assets.xcassets\ic_fature.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_fature.imageset\ic_fature.png" />
+    <ImageAsset Include="Assets.xcassets\ic_past.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_past.imageset\ic_past.png" />
+    <ImageAsset Include="Assets.xcassets\accwork.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\accwork.imageset\accwork.png" />
+    <ImageAsset Include="Assets.xcassets\up.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\up.imageset\Icon-App-60x60%401x.png" />
+    <ImageAsset Include="Assets.xcassets\up.imageset\Icon-App-60x60%402x.png" />
+    <ImageAsset Include="Assets.xcassets\up.imageset\Icon-App-60x60%403x.png" />
+    <ImageAsset Include="Assets.xcassets\login_user.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\login_lock.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\login_user.imageset\Icon-App-40x40%401x.png" />
+    <ImageAsset Include="Assets.xcassets\login_user.imageset\Icon-App-40x40%402x.png" />
+    <ImageAsset Include="Assets.xcassets\login_user.imageset\Icon-App-40x40%403x.png" />
+    <ImageAsset Include="Assets.xcassets\login_lock.imageset\Icon-App-40x40%401x.png" />
+    <ImageAsset Include="Assets.xcassets\login_lock.imageset\Icon-App-40x40%402x.png" />
+    <ImageAsset Include="Assets.xcassets\login_lock.imageset\Icon-App-40x40%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_search.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_search.imageset\Icon-App-29x29%401x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_search.imageset\Icon-App-29x29%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_search.imageset\Icon-App-29x29%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_access_time.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_access_time.imageset\Icon-App-29x29%401x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_access_time.imageset\Icon-App-29x29%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_access_time.imageset\Icon-App-29x29%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_notification.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_notification.imageset\Icon-App-20x20%401x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_notification.imageset\Icon-App-20x20%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_notification.imageset\Icon-App-20x20%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_uparrow.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_uparrow.imageset\Icon-App-29x29%401x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_uparrow.imageset\Icon-App-29x29%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_uparrow.imageset\Icon-App-29x29%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_trophy.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_trophy.imageset\Icon-App-29x29%401x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_trophy.imageset\Icon-App-29x29%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_trophy.imageset\Icon-App-29x29%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_village.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_village.imageset\Icon-App-29x29%401x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_village.imageset\Icon-App-29x29%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_village.imageset\Icon-App-29x29%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_megaphone.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_megaphone.imageset\Icon-App-29x29%401x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_megaphone.imageset\Icon-App-29x29%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_megaphone.imageset\Icon-App-29x29%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_outdoors.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_outdoors.imageset\Icon-App-29x29%401x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_outdoors.imageset\Icon-App-29x29%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_outdoors.imageset\Icon-App-29x29%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_add_icon.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_add_icon.imageset\Icon-App-60x60%401x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_add_icon.imageset\Icon-App-60x60%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_add_icon.imageset\Icon-App-60x60%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_icon_logout.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_icon_logout.imageset\Icon-App-29x29%401x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_icon_logout.imageset\Icon-App-29x29%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_icon_logout.imageset\Icon-App-29x29%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_icon_up.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_date_range.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_date_range.imageset\Icon-App-29x29%401x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_date_range.imageset\Icon-App-29x29%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_date_range.imageset\Icon-App-29x29%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_icon_up.imageset\Icon-App-40x40%401x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_icon_up.imageset\Icon-App-40x40%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_icon_up.imageset\Icon-App-40x40%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_survey_event.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_survey_event.imageset\Icon-App-29x29%401x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_survey_event.imageset\Icon-App-29x29%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_survey_event.imageset\Icon-App-29x29%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_home_w.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_home_w.imageset\Icon-Small.png" />
+    <ImageAsset Include="Assets.xcassets\ic_home_w.imageset\Icon-Small%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_home_w.imageset\Icon-Small%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_drawer_event.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_drawer_event.imageset\Icon-App-29x29%401x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_drawer_event.imageset\Icon-App-29x29%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_drawer_event.imageset\Icon-App-29x29%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_eye_visible.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_eye_hide.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_eye_hide.imageset\Icon-App-29x29%401x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_eye_hide.imageset\Icon-App-29x29%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_eye_hide.imageset\Icon-App-29x29%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_eye_visible.imageset\Icon-App-29x29%401x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_eye_visible.imageset\Icon-App-29x29%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_eye_visible.imageset\Icon-App-29x29%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_check_true.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_check_false.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_check_false.imageset\Icon-App-29x29%401x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_check_false.imageset\Icon-App-29x29%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_check_false.imageset\Icon-App-29x29%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_check_true.imageset\Icon-App-29x29%401x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_check_true.imageset\Icon-App-29x29%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_check_true.imageset\Icon-App-29x29%403x.png" />
+    <ImageAsset Include="Assets.xcassets\splash.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\splash.imageset\splash.png" />
+    <ImageAsset Include="Assets.xcassets\tab_right_align.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\tab_right_align.imageset\text_align_right.png" />
+    <ImageAsset Include="Assets.xcassets\tab_news.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\tab_news.imageset\newspaper-7.png" />
+    <ImageAsset Include="Assets.xcassets\tab_origami.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\tab_origami.imageset\origami.png" />
+    <ImageAsset Include="Assets.xcassets\tab_write.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\tab_write.imageset\tab_write.png" />
+    <ImageAsset Include="Assets.xcassets\tab_gear.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\tab_gear.imageset\gear.png" />
+    <ImageAsset Include="Assets.xcassets\tab_profil.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\tab_profil.imageset\tab_profil.png" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_lock.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_lock.imageset\Icon-App-29x29%401x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_lock.imageset\Icon-App-29x29%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_lock.imageset\Icon-App-29x29%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_right.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_right.imageset\Icon-App-20x20%401x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_right.imageset\Icon-App-20x20%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_right.imageset\Icon-App-20x20%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_info_red.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_info_red.imageset\Icon-App-29x29%401x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_info_red.imageset\Icon-App-29x29%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_info_red.imageset\Icon-App-29x29%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_error.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_error.imageset\baseline_highlight_off_black_36pt_1x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_error.imageset\baseline_highlight_off_black_36pt_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_error.imageset\baseline_highlight_off_black_36pt_3x.png" />
+    <ImageAsset Include="Assets.xcassets\navIcon.imageset\android.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-20x20%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-29x29%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-40x40%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-40x40%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-60x60%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-60x60%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-20x20%401x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-20x20%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-29x29%401x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-29x29%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\ItunesArtwork%402x.png" />
+    <ImageAsset Include="Assets.xcassets\Image.imageset\Contents.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="LaunchScreen.storyboard" />
+  </ItemGroup>
+  <Import Project="..\BoshokuDemo1.projitems" Label="Shared" Condition="Exists('..\BoshokuDemo1.projitems')" />
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
+  <Import Project="..\packages\Xamarin.Forms.3.4.0.1009999\build\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.3.4.0.1009999\build\Xamarin.Forms.targets')" />
+</Project>

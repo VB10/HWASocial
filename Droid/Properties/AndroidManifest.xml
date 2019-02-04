@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="vb.toyotaboshoku.tbtapp" android:versionCode="21" android:versionName="1.5172">
+	<uses-sdk android:minSdkVersion="16" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<permission android:name="${applicationId}.C2D_MESSAGE" android:protectionLevel="signature" />
+	<uses-permission android:name="${applicationId}.permission.C2D_MESSAGE" />
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+	<uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS" />
+	<uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+	<uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
+	<application android:icon="@drawable/logo" android:label="TB Social">
+		<receiver android:name="com.onesignal.GcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+			<intent-filter>
+				<action android:name="com.google.android.c2dm.intent.RECEIVE" />
+				<category android:name="vb.toyotaboshoku.tbtapp" />
+			</intent-filter>
+		</receiver>
+		<provider android:name="android.support.v4.content.FileProvider" android:authorities="vb.toyotaboshoku.tbtapp.fileprovider" android:exported="false" android:grantUriPermissions="true">
+			<meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"></meta-data>
+		</provider>
+	</application>
+</manifest>

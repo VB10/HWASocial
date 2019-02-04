@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    BackgroundColor="#404040"
+
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="BoshokuDemo1.Views.Tab.ActivityPage">
+
+
+    <ContentPage.Content>
+
+        <Grid>
+        <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+         <Frame>
+               <Label Text="Etkinlikler" HorizontalTextAlignment="Center"
+                FontAttributes="Bold" TextColor="#E53935"/>
+        </Frame>    
+
+      
+        <ListView x:Name="_lst" Grid.Row="1" ItemsSource="{Binding .}" RowHeight="300" Margin="10" ItemSelected="Handle_ItemSelected"
+            BackgroundColor="Transparent" SeparatorVisibility="None">
+        <ListView.Header>
+
+              
+                
+       </ListView.Header>
+            
+        <ListView.ItemTemplate>
+                
+        <DataTemplate>
+
+        <ViewCell>
+
+                       <Frame Margin="10"   >
+                       <Grid>
+                                <Frame Grid.Column="0">
+
+                                  <Grid>
+                        <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="Auto"/>
+                                   </Grid.RowDefinitions>
+
+                         <Label Text="{Binding title}" />
+                         <Image Aspect="AspectFill" Source="{Binding image}" Grid.Row="1"/>
+                         <Button Text="Devamını Gör" Grid.Row="2" Clicked="Detail_Clicked" CommandParameter="{Binding .}" />          
+
+                                    
+                       </Grid>
+                                    
+                                </Frame>
+                     
+                       <Grid Grid.Column="1">
+
+                                    <Frame  >
+
+                                        <Grid>
+                                        <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+
+                                            <Switch IsToggled="{Binding isToggled}" HorizontalOptions="Center" />
+
+                                            <Button Grid.Row="1" Text="Kaydet" BackgroundColor="Green" 
+                                            CommandParameter="{Binding .}" Clicked="Handle_Clicked"
+                                            TextColor="White"/>
+
+                                            <Label Grid.Row="2" Text="{Binding isGoing}"/>
+
+                                           
+                                            <Button Grid.Row="3" Text="Katılanları gör" Clicked="UserList_Clicked" CommandParameter="{Binding key}"/>
+
+                                           
+                                            
+                                        </Grid>
+
+                                    </Frame>
+
+                       </Grid>
+                                
+
+
+                       </Grid>
+
+
+
+                        </Frame> 
+
+        </ViewCell>
+
+
+
+        </DataTemplate>
+        </ListView.ItemTemplate>
+
+           
+        </ListView>
+          </Grid>
+    </ContentPage.Content>
+</ContentPage>

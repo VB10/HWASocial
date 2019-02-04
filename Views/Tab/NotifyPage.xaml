@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+    
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BoshokuDemo1.Views.Tab.NotifyPage">
+	<ContentPage.Content>
+
+
+            <ListView  SeparatorVisibility="None"
+                HasUnevenRows="true"   x:Name="_ls" IsPullToRefreshEnabled="true" Refreshing="Handle_Refreshing"
+                ItemSelected="Handle_ItemSelected"
+                ItemsSource="{Binding .}" RowHeight="175">
+
+
+            <ListView.ItemTemplate>
+
+
+
+                
+            <DataTemplate>
+
+             <ViewCell>
+
+             <AbsoluteLayout>
+
+                                <Frame AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1"  BackgroundColor="Teal" Margin="20" >
+
+                                               <Grid>
+                                <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <Label Grid.Row="0" Text="{Binding title}"/>
+                                <Image Grid.Row="1" Source="{Binding image}" Aspect="AspectFill"/>
+                                <Label Grid.Row="2" Text="{Binding desc}" />
+
+                                  </Grid>
+                                </Frame>
+
+
+                       
+                            </AbsoluteLayout>
+                            
+           
+
+            </ViewCell>
+
+
+            </DataTemplate>
+
+            </ListView.ItemTemplate>
+
+            <ListView.Header>
+                <Grid BackgroundColor="Red">
+
+                   
+                    
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    
+             
+                <SearchBar BackgroundColor="Transparent"
+                CancelButtonColor="White" Placeholder="İstediğin haberi ara"  TextColor="White" TextChanged="Handle_TextChanged"
+                 />
+                <Image Source="filter" Grid.Column="1" HeightRequest="30" Margin="0,10,0,10"   >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Handle_Clicked" />
+
+                    </Image.GestureRecognizers>
+
+                </Image>
+
+                       </Grid>
+                   
+                </ListView.Header>
+
+            </ListView>
+            
+	</ContentPage.Content>
+</ContentPage>

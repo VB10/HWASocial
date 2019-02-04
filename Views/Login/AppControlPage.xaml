@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="BoshokuDemo1.Views.Login.AppControlPage" xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Image Source="loginBackground" Aspect="AspectFill" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" />
+            <BoxView Color="Black" Opacity="0.4" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" />
+            <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+                <forms:AnimationView HeightRequest="150" Animation="Animation/loader.json" AutoPlay="True" Loop="true" />
+            </StackLayout>
+            <Label VerticalOptions="End" HorizontalOptions="Center" FontSize="Medium" TextColor="White" Text="Giriş yapılıyor.." IsVisible="{Binding isPageLoading}"  FontFamily="{StaticResource NormalFont}" Margin="0,0,0,20" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" />
+            <!--   <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center" Orientation="Vertical" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+             <forms:AnimationView HeightRequest="100" Animation="Animation/material_wave_loading.json" AutoPlay="True" Loop="true" IsVisible="{Binding isPageLoading}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+            </StackLayout>-->
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

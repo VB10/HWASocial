@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" x:Class="BoshokuDemo1.Views.Popup.AnimationPopupPage">
+    <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+        <forms:AnimationView x:Name="_anim" AutoPlay="True" Loop="true"  BackgroundColor="Transparent" HeightRequest="300"/>
+        <Label Text=" " TextColor="White" x:Name="_animationlabel" HorizontalTextAlignment="Center" FontSize="Medium" FontFamily="{StaticResource BoldFont}" />
+    </StackLayout>
+</pages:PopupPage>

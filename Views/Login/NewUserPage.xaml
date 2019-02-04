@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" BackgroundColor="{StaticResource PageBackgroundColor}" xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" ios:Page.UseSafeArea="true" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BoshokuDemo1.Views.Login.NewUserPage" xmlns:local="clr-namespace:BoshokuDemo1.Views.Login" xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms">
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource MainBackgroundColor}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <forms:AnimationView Grid.Row="0" x:Name="AnimationView" BackgroundColor="Transparent" Animation="Animation/serivce.json" Loop="True" AutoPlay="True" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+            <ScrollView Grid.Row="1" Margin="10,0,10,10" VerticalOptions="FillAndExpand">
+                <StackLayout Spacing="5">
+                    <Label Text="MERHABA" HorizontalTextAlignment="Center" TextColor="{StaticResource inputColor}" FontAttributes="Bold" FontSize="Large" />
+                    <Label Text="Birkaç adımda güvenlik önlemlerini tamamlayıp , kullanmaya başlayın" HorizontalTextAlignment="Center" TextColor="{StaticResource labelColor}" FontAttributes="Bold" FontSize="Medium" />
+                    <Label Text="HESAP KURTARMA :" Margin="0,10,0,0" TextColor="{StaticResource labelColor}" />
+                    <Picker Title="Güvenlik sorunuzu seçin" BackgroundColor="White" ItemsSource="{Binding securityList}" SelectedItem="{Binding userSecurity.secuirtyQuestion}" TextColor="{StaticResource inputColor}" />
+                    <Entry Text="{Binding userSecurity.securityResponse}" BackgroundColor="White" Placeholder="Güvenlik sorusuna cevabınız." TextColor="{StaticResource inputColor}" />
+                    <Label Text="YENİ ŞİFRE:" TextColor="{StaticResource labelColor}" Margin="0,5,0,0" />
+                    <StackLayout Orientation="Horizontal" BackgroundColor="White">
+                        <local:NoneEntry TextColor="{StaticResource inputColor}" HorizontalOptions="FillAndExpand" Text="{Binding userSecurity.newPassword}" IsPassword="{Binding isPassword}" FontSize="Medium" BackgroundColor="Transparent" />
+                        <Image WidthRequest="20" Source="{Binding eyeIcon}" HorizontalOptions="End" Margin="5" BackgroundColor="{StaticResource inputColor}">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding visibleCommand}" NumberOfTapsRequired="1" />
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </StackLayout>
+                    <Label Text="YENİ ŞİFRE TEKRAR:" TextColor="{StaticResource labelColor}" Margin="0,5,0,0"  />
+                    <StackLayout Orientation="Horizontal" BackgroundColor="White">
+                        <local:NoneEntry TextColor="{StaticResource inputColor}" HorizontalOptions="FillAndExpand" Text="{Binding rePassword}" ReturnType="Done" ReturnCommand="{Binding saveUserResponse}" IsPassword="{Binding isPasswordRe}" FontSize="Medium" BackgroundColor="Transparent" />
+                        <Image WidthRequest="20" Source="{Binding eyeIconRe}" HorizontalOptions="End" Margin="5" BackgroundColor="{StaticResource inputColor}">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding visibleCommandRe}" NumberOfTapsRequired="1" />
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </StackLayout>
+                    <Label Text="*Şifreniz en az 6 karakter uzunluğunda olmalıdır." Margin="0,5,0,0" FontSize="Small" FontAttributes="Bold" TextColor="{StaticResource inputColor}" HorizontalTextAlignment="Center" LineBreakMode="CharacterWrap" />
+                    <Button Text="BAŞLA" BorderRadius="0" Command="{Binding saveUserResponse}" VerticalOptions="EndAndExpand" BackgroundColor="White" TextColor="{StaticResource labelColor}" />
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms" BackgroundColor="Teal" x:Class="BoshokuDemo1.Views.Tab.TestPage" xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms">
+    <ContentPage.Content>
+        <StackLayout Margin="0,20,0,0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                       <Image Source="right" >
+                       <Image.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Handle_Tapped"/>
+                        
+                    </Image.GestureRecognizers>
+                    
+                </Image>
+                <SearchBar BackgroundColor="Transparent" Grid.Column="1"/>
+            </Grid>
+
+             <Image Source="right" >
+                       <Image.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Handle_Tapped"/>
+                        
+                    </Image.GestureRecognizers>
+                    
+                </Image>
+                <SearchBar BackgroundColor="Transparent"/>
+
+         <ListView VerticalOptions="FillAndExpand" BackgroundColor="White">
+                
+            </ListView>
+            
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

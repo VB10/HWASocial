@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:ia="clr-namespace:IntelliAbb.Xamarin.Controls;assembly=IntelliAbb.Xamarin.Controls" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BoshokuDemo1.Views.Login.LoginPage" xmlns:local="clr-namespace:BoshokuDemo1.Views.Login">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Image Source="loginBackground" Aspect="Fill" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" />
+            <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                <StackLayout HeightRequest="1" BindingContext="{Binding .}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="10" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="5" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="4*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Image Grid.Row="1" Source="loginIcon" Aspect="AspectFit" />
+                        </Grid>
+                        <StackLayout Grid.Row="3" Margin="10,0,10,10" Spacing="2" BindingContext="{Binding .}">
+                            <Label Text="SİCİL NO " TextColor="#f6f6f6" FontFamily="{StaticResource BoldFont}" FontSize="Small" />
+                            <StackLayout Orientation="Horizontal" Margin="0,0,0,5" HorizontalOptions="FillAndExpand">
+                                <Image Source="login_user" HorizontalOptions="Start" HeightRequest="20" />
+                                <local:NoneEntry VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Text="{Binding user.regNumber}" FontSize="Medium" TextColor="White" FontFamily="{StaticResource NormalFont}" />
+                            </StackLayout>
+                            <BoxView HeightRequest="1" Color="{StaticResource hintColor}" Opacity="0.7" />
+                            <Label Text="ŞİFRE " TextColor="White" FontFamily="{StaticResource BoldFont}" FontSize="Small" />
+                            <StackLayout Orientation="Horizontal" Margin="0,0,0,5">
+                                <Image HeightRequest="20" Source="login_lock" HorizontalOptions="Start" />
+                                <local:NoneEntry TextColor="White" HorizontalOptions="FillAndExpand" Text="{Binding user.password}" IsPassword="{Binding isPassword}" FontSize="Medium" FontFamily="{StaticResource NormalFont}" BackgroundColor="Transparent" />
+                                <Image HeightRequest="20" Source="{Binding eyeIcon}" HorizontalOptions="End" Margin="0">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding visibleCommand}" NumberOfTapsRequired="1" />
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </StackLayout>
+                            <BoxView HeightRequest="1" Color="{StaticResource hintColor}" Opacity="0.7" />
+                            <Label Text="Şifremi Unuttum ?" HorizontalOptions="End" FontFamily="{StaticResource MediumFont}" TextColor="White" FontSize="Medium" IsVisible="true">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding passwordResetCommand}" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <Grid Margin="0,10,0,0" RowSpacing="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Image WidthRequest="25" Source="{Binding checkBoxIcon}" HorizontalOptions="End" Margin="0">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding checkBoxCommand}" NumberOfTapsRequired="1" />
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                
+<!--                                <ia:Checkbox x:Name="AwesomeCheckbox" OutlineColor="Black" FillColor="Black" CheckColor="White" Shape="Circle" IsChecked="{Binding checkBoxBool}" IsCheckedChanged="Handle_IsCheckedChanged" />
+-->                                <Label Grid.Column="1" FontSize="Medium">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Üyelik Sözleşmesi ve Kullanım Koşulları" TextColor="Blue" ForegroundColor="#2d4059" FontFamily="{StaticResource BoldFont}">
+                                                <Span.GestureRecognizers>
+                                                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding licenseCommand}" />
+                                                </Span.GestureRecognizers>
+                                            </Span>
+                                            <Span Text=" okudum onaylıyorum." />
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </Grid>
+                            <Label Text="{Binding errorText}" TextColor="White" FontAttributes="Bold" FontSize="Small" HorizontalTextAlignment="Center" />
+                            <Button x:Name="_buttonLogin" Padding="5" BackgroundColor="White" Margin="20,0,20,0" FontFamily="{StaticResource MediumFont}" BorderRadius="20" CornerRadius="20" Image="right" Command="{Binding loginCommand}" IsVisible="{Binding buttonEnabled}"
+                                TextColor="{StaticResource PageBackgroundColor}" FontSize="Medium" />
+                            <ActivityIndicator x:Name="_indicator" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" IsVisible="{Binding loadingComplate}" IsRunning="{Binding loadingComplate}" Color="White" />
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+            </ScrollView>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

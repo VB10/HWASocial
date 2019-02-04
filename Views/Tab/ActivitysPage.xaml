@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" BackgroundColor="{StaticResource PageBackgroundColor}" xmlns:components="clr-namespace:BoshokuDemo1.Views.Components" xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" ios:Page.UseSafeArea="true" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" x:Class="BoshokuDemo1.Views.Tab.ActivitysPage">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Grid x:Name="_grid" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" BackgroundColor="{StaticResource MainBackgroundColor}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <ListView x:Name="_lst" ItemsSource="{Binding activityList}" IsRefreshing="{Binding loadingComplate}" RefreshAllowed="true" Margin="5" IsPullToRefreshEnabled="true" RefreshCommand="{Binding RefreshCommand}" ItemSelected="Handle_ItemSelected" RowHeight="350" Grid.Row="1"
+                    BackgroundColor="Transparent" SeparatorVisibility="None">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Spacing="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="10">
+                                    <BoxView HeightRequest="3" Color="{StaticResource inputColor}" Margin="3,0,3,0" />
+                                    <Grid BackgroundColor="White" Padding="5" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" Opacity="0.9">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="1" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <StackLayout Grid.Row="0" Orientation="Horizontal" HorizontalOptions="End">
+                                            <Image Source="ic_date_range" HeightRequest="{Binding FontSize}" BindingContext="{x:Reference labelDate}" />
+                                            <Label Text="{Binding Object.createdDate, StringFormat='{0:dd/MM/yyyy}'}" x:Name="labelDate" FontSize="Small" TextColor="Black" Grid.Row="0" />
+                                        </StackLayout>
+                                        <ffimageloading:CachedImage Source="{Binding Object.image}" HeightRequest="300" Aspect="AspectFit" DownsampleToViewSize="true" Grid.Row="1" />
+                                        <BoxView Color="{StaticResource PageBackgroundColor}" Grid.Row="2" />
+                                        <Label Text="{Binding Object.title}" FontAttributes="Bold" TextColor="{StaticResource labelColor}" FontSize="15" LineBreakMode="CharacterWrap" Grid.Row="3" />
+                                    </Grid>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.Footer>
+                        <forms:AnimationView HeightRequest="50" Animation="Animation/material_wave_loading.json" AutoPlay="True" Loop="true" IsVisible="{Binding isVisibleIndicator}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+                    </ListView.Footer>
+                </ListView>
+            </Grid>
+            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" IsVisible="{Binding isEmptyList}">
+                <Image Source="ic_error" HeightRequest="100" Opacity="0.5" />
+                <Label Text="Planlanan bir etkinlik bulunmuyor" TextColor="{StaticResource labelColor}" FontFamily="{StaticResource NormalFont}" />
+            </StackLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" BackgroundColor="{StaticResource PageBackgroundColor}" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BoshokuDemo1.Views.DrawerMenu.DrawerPage" xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" ios:Page.UseSafeArea="true">
+    <ContentPage.Content>
+        <Grid BackgroundColor="White" ColumnSpacing="0" RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="3*" />
+            </Grid.RowDefinitions>
+            <Image Source="tek" Aspect="AspectFill" />
+            <StackLayout Grid.Row="1" HorizontalOptions="Start" Margin="10,10,0,10" Spacing="2">
+                <Label Text="HardwareAndro'da Yaşam" FontSize="Large" TextColor="{StaticResource labelColor}" FontFamily="{StaticResource LightFont}" />
+                <BoxView HeightRequest="2" Color="{StaticResource PageBackgroundColor}" />
+            </StackLayout>
+            <ListView ItemsSource="{Binding .}" Grid.Row="2" BackgroundColor="Transparent" Footer="" IsPullToRefreshEnabled="true" SeparatorVisibility="None" Refreshing="Handle_Refreshing" x:Name="_lw" ItemSelected="Handle_ItemSelected" HasUnevenRows="false">
+                <ListView.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Button Clicked="Handle_Clicked" Image="leftarrow" Grid.Column="1" BackgroundColor="Transparent" FontAttributes="Bold" TextColor="Black" x:Name="_backButton" IsVisible="false" />
+                    </Grid>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <!-- red normal icon aqua ileri geri  !-->
+                            <Grid RowSpacing="30" ColumnSpacing="15">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Image Source="{Binding icon}" Opacity="0.7" Margin="10" />
+                                <StackLayout Grid.Column="1" Orientation="Horizontal">
+                                    <Label VerticalTextAlignment="Center" FontFamily="{StaticResource MediumFont}" Text="{Binding val}" TextColor="{StaticResource labelColor}" />
+                                </StackLayout>
+                                <Image Source="{Binding rightIcon}" Grid.Column="2" Opacity="0.7" Margin="10" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" BackgroundColor="{StaticResource PageBackgroundColor}" xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" ios:Page.UseSafeArea="true" x:Class="BoshokuDemo1.Views.DrawerMenu.EventPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Geri dön" Order="Primary" Command="{Binding BackCommand}" Icon="ic_home_w" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Grid BackgroundColor="{StaticResource MainBackgroundColor}" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" RowSpacing="0" x:Name="_grid">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <ListView Grid.Row="1" x:Name="_lst" ItemsSource="{Binding eventList}" ItemSelected="Handle_ItemSelected" IsPullToRefreshEnabled="true" RefreshCommand="{Binding RefreshCommand}" SeparatorVisibility="None" VerticalOptions="FillAndExpand" BackgroundColor="Transparent" IsRefreshing="{Binding isRefresh}"
+                    HasUnevenRows="true">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame BackgroundColor="White" Padding="10" Margin="10,20,10,0">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="1" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <Label Text="{Binding Object.compName}" FontSize="20" FontAttributes="Bold" />
+                                        <BoxView Grid.Row="1" Color="Red" />
+                                        <Grid Grid.Row="2">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Image Grid.Column="0" Source="{Binding Object.image}" BindingContext="{x:Reference labelSurvey}" />
+                                            <Label Grid.Column="1" Text="{Binding Object.compDesc}" LineBreakMode="TailTruncation" x:Name="labelSurvey" FontSize="Medium" />
+                                        </Grid>
+                                    </Grid>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.Footer>
+                        <forms:AnimationView HeightRequest="50" Animation="Animation/material_wave_loading.json" AutoPlay="True" Loop="true" IsVisible="{Binding isVisibleIndicator}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+                    </ListView.Footer>
+                </ListView>
+            </Grid>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" IsVisible="{Binding isEmptyList}" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                <Image Source="flag" HeightRequest="{Binding FontSize}" Aspect="AspectFill" Opacity="0.8" BindingContext="{x:Reference labelEmpty}" />
+                <Label VerticalOptions="Center" Text="Planlanan bir yarışma bulunmuyor." TextColor="{StaticResource labelColor}" x:Name="labelEmpty" />
+            </StackLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

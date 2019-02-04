@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" BackgroundColor="{StaticResource PageBackgroundColor}" xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" ios:Page.UseSafeArea="true" x:Class="BoshokuDemo1.Views.Tab.ReadPage">
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center"  Margin="0,0,20,0">
+            <Image Source="navIcon" Aspect="AspectFit" x:Name="_navIcon"  />
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="#ECF0F1">
+            <forms:AnimationView Animation="sca.json" Loop="false" BackgroundColor="Transparent" AutoPlay="{Binding animationVisible}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+            <WebView x:Name="_content" IsVisible="{Binding webViewVisible}" Source="{Binding webViewSource}" BackgroundColor="Transparent" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BoshokuDemo1.Views.Tab.AnnounPage" xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" BackgroundColor="{StaticResource PageBackgroundColor}" xmlns:components="clr-namespace:BoshokuDemo1.Views.Components" xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" ios:Page.UseSafeArea="true">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="notification" Order="Primary" Icon="ic_notification" IsEnabled="{Binding notifyEnabled}" Priority="0" Command="{Binding showNewNotify}" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource MainBackgroundColor}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <AbsoluteLayout Grid.Row="1">
+                <!--Search Bar Listview-->
+                <ListView Grid.Row="1" SeparatorVisibility="None" IsVisible="{Binding searchListView}" VerticalOptions="FillAndExpand" BindingContext="{Binding .}" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" ItemSelected="Handle_ItemSelected" ItemsSource="{Binding SearchList}" BackgroundColor="Transparent"
+                    HasUnevenRows="false" RowHeight="75">
+                    <ListView.Header>
+                        <StackLayout>
+                            <components:CustomSearchBar Placeholder="Haber ara" Text="{Binding searchBarText}" />
+                            <forms:AnimationView HeightRequest="50" Animation="Animation/material_wave_loading.json" AutoPlay="True" Loop="true" IsVisible="{Binding isPageLoading}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+                        </StackLayout>
+                    </ListView.Header>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ImageCell Text="{Binding Object.title}" Detail="{Binding Object.desc}" ImageSource="{Binding Object.image}" />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <!--Feed ListView-->
+                <ListView BackgroundColor="Transparent"  ItemSelected="Handle_ItemSelected" IsRefreshing="{Binding isVisibleIndicator}" 
+                          IsVisible="{Binding isVisibleFeedView}" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" 
+                          IsPullToRefreshEnabled="true" RefreshCommand="{Binding RefreshCommand}" ItemAppearing="Handle_ItemAppearing" CachingStrategy="RecycleElement"
+                    ItemsSource="{Binding AnnList}"  SeparatorVisibility="None" RowHeight="320" HasUnevenRows="true" x:Name="listViewFeed">
+                    <ListView.Header>
+                        <components:CustomSearchBar Placeholder="Haber ara" Text="{Binding searchBarText}" Grid.Row="0" />
+                    </ListView.Header>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid BackgroundColor="Transparent">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="10" />
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="10" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="10" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="10" />
+                                    </Grid.ColumnDefinitions>
+                                    <StackLayout BackgroundColor="Transparent" Spacing="0" Grid.Row="1" Grid.Column="1">
+                                        <BoxView HeightRequest="3" Color="{StaticResource inputColor}" Margin="3,0,3,0" />
+                                        <StackLayout BackgroundColor="{StaticResource MainBackgroundColor}" Padding="3,0,3,3">
+                                            <Grid RowSpacing="2" BackgroundColor="White" Padding="7">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto" />
+                                                    <RowDefinition Height="Auto" />
+                                                    <RowDefinition Height="1" />
+                                                    <RowDefinition Height="Auto" />
+                                                </Grid.RowDefinitions>
+                                                <Label Grid.Row="1" Text="{Binding Object.title}" FontFamily="{StaticResource MediumFont}" LineBreakMode="WordWrap" HorizontalOptions="StartAndExpand" FontSize="Medium" TextColor="{StaticResource labelColor}" FontAttributes="Bold" />
+                                                <BoxView Color="{StaticResource PageBackgroundColor}" Grid.Row="2" />
+                                                <ActivityIndicator Grid.Row="0" BindingContext="{x:Reference _image}" HorizontalOptions="Center" VerticalOptions="Center" IsRunning="{Binding IsLoading}" Color="Red" Opacity="0.45" />
+                                                <ffimageloading:CachedImage Grid.Row="0" Source="{Binding Object.image}" HeightRequest="200" BindingContext="{Binding .}" Aspect="{Binding Object.aspect}" Success="Handle_Success" BackgroundColor="White" DownsampleToViewSize="true" x:Name="_image" IsVisible="{Binding Object.imgVisible}" />
+                                                <StackLayout Orientation="Horizontal" HorizontalOptions="End" Grid.Row="3">
+                                                    <Image Source="ic_access_time.png" HeightRequest="{Binding FontSize}" BindingContext="{x:Reference labelDate}" />
+                                                    <Label Text="{Binding Object.newsCreateDate}" x:Name="labelDate" FontSize="Small" TextColor="Gray" VerticalOptions="Center" />
+                                                </StackLayout>
+                                            </Grid>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.Footer>
+                        <forms:AnimationView HeightRequest="50" Animation="Animation/material_wave_loading.json" AutoPlay="True" Loop="true" IsVisible="{Binding isPageLoading}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+                    </ListView.Footer>
+                </ListView>
+                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" IsVisible="{Binding isEmptyList}" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                    <Image Source="ic_error" HeightRequest="100" Opacity="0.4" />
+                    <Label Text="Herhangi bir haber bulunmuyor" TextColor="{StaticResource labelColor}" FontFamily="{StaticResource NormalFont}" />
+                </StackLayout>
+                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" IsVisible="{Binding searchNotFound}" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                    <Image Source="ic_search" HeightRequest="100" Opacity="0.4" />
+                    <Label Text="Arama sonucu bulunamadı" TextColor="{StaticResource labelColor}" FontFamily="{StaticResource NormalFont}" />
+                </StackLayout>
+                <Button Image="ic_icon_up" Clicked="Handle_Activated" IsVisible="{Binding upIconVisible}" HeightRequest="70" BackgroundColor="Transparent" AbsoluteLayout.LayoutFlags="All" Margin="0,0,10,10" HorizontalOptions="End" VerticalOptions="End" AbsoluteLayout.LayoutBounds="0,0,1,1" />
+                <Button Grid.Row="1" Grid.Column="1" Text="{Binding newNotifyButtonText}" Command="{Binding RefreshCommand}" FontSize="Medium" Image="ic_uparrow" IsVisible="{Binding newNotifyButtonVisible}" Opacity="0.85" TextColor="White" BackgroundColor="Gray"
+                    HorizontalOptions="Center" VerticalOptions="Start" Margin="0,50,0,0" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" />
+            </AbsoluteLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

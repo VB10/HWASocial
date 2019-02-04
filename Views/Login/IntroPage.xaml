@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:controls="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+             x:Class="BoshokuDemo1.Views.Login.IntroPage">
+    <ContentPage.Content>
+    <AbsoluteLayout>
+    <controls:CarouselViewControl 
+                x:Name="carousel"   
+                BackgroundColor="Transparent"
+        ItemsSource="{Binding MyItemsSource}"
+        ShowArrows="true"
+        ShowIndicators="true"
+        PositionSelected="Handle_PositionSelected"
+        AbsoluteLayout.LayoutFlags="All"
+        AbsoluteLayout.LayoutBounds="0,0,1,1"
+        PositionSelectedCommand="{Binding MyCommand}"
+        Orientation="Horizontal"/>
+            <Grid   AbsoluteLayout.LayoutFlags="All"
+                    Margin="0,0,0,40"
+                    VerticalOptions="End"
+                    AbsoluteLayout.LayoutBounds="0,0,1,1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button 
+                    Text="{Binding btnText}"  
+                    CornerRadius="20"
+                    Grid.Column="1"
+                    FontSize="24"
+                    Clicked="Handle_Clicked"
+                    BackgroundColor="White"
+                    TextColor="Red"/>
+            </Grid>
+          </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

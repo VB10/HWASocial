@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:BoshokuDemo1.Views.Login" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BoshokuDemo1.Views.Tab.UserDataPage" BackgroundColor="{StaticResource PageBackgroundColor}" xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" ios:Page.UseSafeArea="true" xmlns:components="clr-namespace:BoshokuDemo1.Views.Components">
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource MainBackgroundColor}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <ScrollView Margin="5,5,5,0">
+                <StackLayout>
+<!--                    <Label Text="Fotoğraf:" TextColor="{StaticResource labelColor}" FontFamily="{StaticResource MediumFont}" VerticalOptions="Center" />
+-->                    <Image Source="{Binding infoPhoto.Source}" Aspect="AspectFit" Grid.Row="1" Margin="5" HeightRequest="200">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding takePhoto}" NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Text="Konu Başlığı: " FontFamily="{StaticResource LightFont}" TextColor="{StaticResource labelColor}" VerticalOptions="Center" />
+                    <local:NoneEntry FontFamily="{StaticResource MediumFont}" HorizontalOptions="FillAndExpand" TextColor="{StaticResource labelColor}" Text="{Binding titleText}" BackgroundColor="White" />
+                    <Label Text="İçerik: " FontFamily="{StaticResource LightFont}" TextColor="{StaticResource labelColor}" VerticalOptions="Center" />
+                    <Editor FontFamily="{StaticResource MediumFont}" Margin="3" TextColor="{StaticResource labelColor}" BackgroundColor="White" VerticalOptions="FillAndExpand" Keyboard="Chat" FontSize="Medium" Text="{Binding descText}" />
+                    <Label Text="Departman:" FontFamily="{StaticResource LightFont}" TextColor="{StaticResource labelColor}" VerticalOptions="Center" />
+                    <Picker ItemsSource="{Binding pickerData}" FontFamily="{StaticResource MediumFont}" TextColor="{StaticResource labelColor}" BackgroundColor="White" SelectedItem="{Binding pickerSelected}" />
+                    <Button BackgroundColor="White" BorderRadius="5" Text="Gönder" FontFamily="{StaticResource BoldFont}" FontAttributes="Bold" TextColor="{StaticResource labelColor}" Command="{Binding sendRequest}" Margin="5" VerticalOptions="End" />
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

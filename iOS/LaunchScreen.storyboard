@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController extendedLayoutIncludesOpaqueBars="YES" id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Lmf-qv-WEa">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginIcon" translatesAutoresizingMaskIntoConstraints="NO" id="sFj-vm-eGG">
+                                <rect key="frame" x="105" y="351" width="204" height="211"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="211" id="Beb-fu-CrN"/>
+                                    <constraint firstAttribute="width" constant="204" id="EIP-da-NQZ"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Lmf-qv-WEa" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="4I4-f1-n8b"/>
+                            <constraint firstItem="sFj-vm-eGG" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="8.5" id="DtH-ah-sDg"/>
+                            <constraint firstItem="Lmf-qv-WEa" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" constant="34" id="hzO-7X-3hd"/>
+                            <constraint firstItem="sFj-vm-eGG" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="qXb-da-uGG"/>
+                            <constraint firstAttribute="trailing" secondItem="Lmf-qv-WEa" secondAttribute="trailing" id="qw3-Yq-3Cc"/>
+                            <constraint firstItem="Lmf-qv-WEa" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="xLE-ST-hEv"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="44.927536231884062" y="369.29347826086962"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="loginBackground" width="750" height="1334"/>
+        <image name="loginIcon" width="432" height="433"/>
+    </resources>
+</document>

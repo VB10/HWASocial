@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><ContentPage xmlns="http://xamarin.com/schemas/2014/forms"    
+ xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"     x:Class="BoshokuDemo1.Views.Tab.AnnounPage" >
+    <ContentPage.Content>              
+     
+       <ListView   BackgroundColor="#252A34"   
+             ItemSelected="Handle_ItemSelected" IsPullToRefreshEnabled="true" Refreshing="Handle_Refreshing"      
+                ItemsSource="{Binding .}" SeparatorVisibility="None" HasUnevenRows="true" x:Name="_ls">    
+
+            
+                     <ListView.Header>          
+                <Grid>         
+                    <Grid.ColumnDefinitions> 
+               
+                       <ColumnDefinition Width="*"/>       
+                        <ColumnDefinition Width="*"/>                
+                        <ColumnDefinition Width="*"/>  
+                    </Grid.ColumnDefinitions> 
+                    
+                  <ActivityIndicator x:Name="_ai"  Grid.Column="1"   IsRunning="true"/>  
+
+                    
+                   </Grid>    
+                </ListView.Header>        <ListView.ItemTemplate>    
+                
+                
+
+                <DataTemplate>  
+                    <ViewCell>        
+                        <Frame Margin="8"  >    
+                            
+                                     
+                                                                  <Grid MinimumHeightRequest="200">
+                                <Grid.RowDefinitions>       
+                                    
+                                                                           <RowDefinition Height="Auto"/>    
+                                    
+                                                                               <RowDefinition Height="Auto"/>  
+                                   
+                                                                                      <RowDefinition Height="Auto"/>     
+
+        </Grid.RowDefinitions>                                                            <!-- üt panel -->   
+        <Grid Grid.Row="0">                   
+        <Grid.ColumnDefinitions>       
+        <ColumnDefinition Width="Auto"/>         
+        <ColumnDefinition Width="4*"/>          
+        <ColumnDefinition Width="*"/>                  
+        </Grid.ColumnDefinitions>                 
+        <Grid Grid.Column="1">                         
+        <Grid.RowDefinitions>       
+        <RowDefinition Height="Auto"/>   
+        <RowDefinition Height="Auto"/>      
+        </Grid.RowDefinitions>          
+        <Label Text="{Binding admin.displayName}"   FontAttributes="Bold"/>     
+        <Grid Grid.Row="1">     
+        <Grid.ColumnDefinitions>     
+        <ColumnDefinition Width="Auto"/>      
+        <ColumnDefinition Width="Auto"/>      
+        </Grid.ColumnDefinitions>          
+        <Image Source="loc.png" HeightRequest="15"/> 
+        <Label Grid.Column="1"  Text="{Binding admin.location}" TextColor="Gray"/>  
+        </Grid>                                                   
+        </Grid>                                                   
+        <Label Text="{Binding dateCreator}" HorizontalOptions="EndAndExpand" TextColor="Gray" Grid.Column="2"  FontSize="9" /> 
+        <!-- ü panel -->                                      </Grid>          
+        <!-- haber resmi panel -->           
+        <Image Grid.Row="1" Source="{Binding image}" HeightRequest="150" Aspect="AspectFill" IsVisible="{Binding imgVisible}" />                    <!-- haber resmi panel -->                       <!-- haber içik -->                      <Grid Grid.Row="2" HeightRequest="50">                                                          <Label Text="{Binding title}" FontAttributes="Bold"/>                      <Grid  Grid.Row="1">                                        <Grid.ColumnDefinitions>                                            <ColumnDefinition Width="*"/>                                            <ColumnDefinition Width="Auto"/>                                        </Grid.ColumnDefinitions>                       <Label Text="{Binding desc}" TextColor="Gray" FontSize="12" />                      <Label Text="Devamını gö" TextColor="Gray" FontSize="12" FontAttributes="Bold" Grid.Column="1" />                       </Grid>                                                                                               </Grid>                                                    <!-- haber içik -->                                                                                                     </Grid>                        </Frame>                      </ViewCell>          </DataTemplate>         </ListView.ItemTemplate>         </ListView>      
+                            </ContentPage.Content>
+</ContentPage> 
