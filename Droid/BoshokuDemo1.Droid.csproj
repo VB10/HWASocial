@@ -387,10 +387,6 @@
     <AndroidResource Include="Resources\drawable\loginBackground.png" />
     <AndroidResource Include="Resources\drawable\defaultProfile.png" />
     <AndroidResource Include="Resources\drawable\passwordIconLarge.png" />
-    <AndroidResource Include="Resources\drawable-hdpi\logo.png" />
-    <AndroidResource Include="Resources\drawable-xhdpi\logo.png" />
-    <AndroidResource Include="Resources\drawable-xxhdpi\logo.png" />
-    <AndroidResource Include="Resources\drawable\logo.png" />
     <AndroidResource Include="Resources\drawable\back.png" />
     <AndroidResource Include="Resources\drawable\leftarrow.png" />
     <AndroidResource Include="Resources\drawable\survey.png" />
@@ -526,6 +522,10 @@
     <AndroidResource Include="Resources\drawable\tek.png" />
     <AndroidResource Include="Resources\drawable\splash.png" />
     <AndroidResource Include="Resources\drawable\navIcon.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\logo.png" />
+    <AndroidResource Include="Resources\drawable\logo.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\logo.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\logo.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Dependency\" />
