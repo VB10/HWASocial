@@ -1,6 +1,6 @@
 # HWA SOCIAL
 
-![HWA Social iOS](https://github.com/VB10/HWASocial/blob/master/demo/Screen%20Shot%202019-02-05%20at%2020.16.15.png?raw=true)
+![HWA Social iOS](https://github.com/VB10/HWASocial/blob/master/demo/Screen%20Shot%202019-02-05%20at%2020.06.45.png?raw=true)
 
 ![HWA Social Androd](https://github.com/VB10/HWASocial/blob/master/demo/Screen%20Shot%202019-02-05%20at%2020.10.16.png?raw=true)
 
