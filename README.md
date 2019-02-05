@@ -1,9 +1,9 @@
 # HWA SOCIAL
 
-HWA iOS             |  HWA Android
+<!-- HWA iOS             |  HWA Android
 :-------------------------:|:-------------------------:
 ![HWA Social iOS](https://github.com/VB10/HWASocial/blob/master/demo/Screen%20Shot%202019-02-05%20at%2020.06.45.png?raw=true)  |  ![HWA Social Androd](https://github.com/VB10/HWASocial/blob/master/demo/Screen%20Shot%202019-02-05%20at%2020.10.16.png?raw=true)
-
+ -->
 
 
 
@@ -43,8 +43,9 @@ HWA iOS             |  HWA Android
 9. BaseEnum yapılarıyla MessagingCenter'leri ortaklaştırdık.
 
 
+
 ----------
-# Nasıl Kullanabilrim ?
+# Nasıl Kullanabilirim ?
 
 > Projede kullandığımız Xamarin Firebase package'ti eskimiş kendilerini .net core 2+ ile kullnılmıyor ondan dolayı kendiniz yazarken projedeki mantığı referans alarak alıp bu paketi kullanabilirsiniz [Firebase Database](https://www.nuget.org/packages/FirebaseDatabase.net/)
 
@@ -101,6 +102,11 @@ HWA iOS             |  HWA Android
 - Onesignal hesabı oluşturup site üzerinden gerekli adımları izlerseniz size rahatlıkla entegrasyonu yapacaktır.
 - Projenin bundle veya appid'lerini değiştirmelisiniz.
 - Youtube üzerinden tüm videolara erişebilirsiniz detaylı anlatım orarada bulunmakta.
+
+[JSON DOWNLOAD](https://drive.google.com/file/d/1lfD0M2axsq7CQABESmdTWREmm7qJGrnV/view?usp=sharing)
+
+![gif](https://github.com/VB10/HWASocial/blob/master/demo/firebase.gif?raw=true)
+
 
 ----------
 # Dikkat Edilmesi Gerekenler
